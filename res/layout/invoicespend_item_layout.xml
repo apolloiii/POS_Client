@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <CheckBox
+        android:id="@+id/cbInvoicecost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/txtCodeInvoice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="MA"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtnameInvoice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Ten hoa don"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Gia"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtpersonPay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Nguoi chi"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtPayfor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Chi cho"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Trang thai"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtCost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Chi phi"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/gallery_thumb"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <GridView
+            android:id="@+id/gridviewveget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:verticalSpacing="50dp"
+            android:gravity="center"
+            android:numColumns="3"
+             />
+
+        <!-- Here is the view to show if the list is emtpy -->
+    </FrameLayout>
+
+</LinearLayout>

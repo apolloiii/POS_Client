@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Body layout amount 95% -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="9.5"
+        android:background="@android:color/darker_gray"
+        android:orientation="horizontal" >
+
+        <!-- Left layout amount 70% -->
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical" >
+
+            <!-- Header is menu layout 10% -->
+
+            <fragment
+                android:id="@+id/headerMenuFragment"
+                android:name="iii.pos.client.fragment.HeaderPosFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.2" />
+
+            <!-- Header is menu layout 90% -->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/body_Pos_Container"
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="6.3" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtLinecenter"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#31A5D1" />
+ 
+        <!-- Right layout (category, items) 30% -->
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/category_container"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="5.0" />
+    </LinearLayout>
+
+    <!-- footer layout amout 5% -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <fragment
+            android:id="@+id/footer_Pos_Fragment"
+            android:name="iii.pos.client.fragment.FooterPosFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

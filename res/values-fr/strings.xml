@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">POS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Cài đặt</string>
+    <!-- User String -->
+    <string name="username">Tên người dùng \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="invoiceemail">Bàn \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="invoicetimein">Thời gian ở    \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="invoicetimeout">Thời gian đi   \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="titleinvoice">Báo cáo danh mục mặt hàng</string>
+    <string name="invoiceaddress">Địa chỉ  \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020</string>
+    <string name="invoicephone">Số điện thoại  \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020</string>
+
+    <!-- The Menu String -->
+    <string name="table_map_menu">Bản đồ</string>
+    <string name="invoice_menu">Hóa đơn</string>
+    <string name="setting_menu">Cài đặt</string>
+    <string name="login_out">Đăng nhập</string>
+
+    <!-- invoice button -->
+    <string name="inv_destroy">Hủy Hóa Đơn</string>
+    <string name="inv_addnew">Thêm Hóa Đơn</string>
+    <string name="inv_calculator">Máy Tính</string>
+    <string name="inv_freetable">Giải phóng bàn</string>
+
+    <!-- them -->
+    <string name="OK">Đồng ý</string>
+    <string name="Cancel">Hủy bỏ</string>
+    <string name="name_item">Tên mục</string>
+    <string name="unit">Đơn vị</string>
+    <string name="amount">Số lượng</string>
+    <string name="Cost">Giá tiền</string>
+    <string name="Notes">Ghi chú</string>
+
+    <!-- Map -->
+
+    <string name="floor1">F 1 </string>
+    <string name="floor2">F 2 </string>
+    <string name="floor3">F 3 </string>
+    <string name="floor4">F 4 </string>
+    <string name="addinvdetailtitle">Bạn Chưa Thêm Món Ăn Mới !</string>
+    <string name="addinvdetailmsg">Bạn Có Muốn Thoát Không ?!</string>
+    <string name="inv_commition"> Giảm Giá</string>
+    <string name="inv_total"> Tổng Tiền</string>
+    <string name="refreshscreen">Hãy chạy lại màn hình để thấy bàn mới</string>
+    <string name="inv_Viewer">Ghép Hóa Đơn</string>
+    <string name="inv_split">Tách Hóa Đơn</string>
+    <string name="titleTachban">Hãy Lựa Chọn</string>
+    <string name="transferItem">Chuyển món</string>
+    <string name="inv_add_ChooseTable">Chọn bàn</string>
+    <string name="inv_add_Inv">Thêm</string>
+    <string name="header_pos_TableMap">Sơ đồ</string>
+    <string name="header_pos_Invoice">Phục vụ</string>
+    <string name="header_pos_Kitchen">Bếp</string>
+    <string name="header_pos_Payment">Thu ngân</string>
+    <string name="spilitInvoice">Tác vụ tách hóa đơn</string>
+    <string name="joinInvoice">Tác vụ ghép hóa đơn</string>
+    <string name="totalInvoice">Tổng cộng:</string>
+    <string name="selectIvoice">Chọn hóa đơn để ghép</string>
+    <string name="customname">Tên khách hàng</string>
+    <string name="addres">Địa chỉ</string>
+    <string name="namefood">Tên</string>
+    <string name="amount1">Số lượng</string>
+    <string name="currency1">Tiền tệ</string>
+    <string name="costtable">Bảng giá</string>
+    <string name="inv_vat"> VAT</string>
+    <string name="joined_Invoice">Hóa đơn đã ghép</string>
+    <string name="itemcode">Mã món ăn</string>
+    <string name="rememberme">Lưu lại thông tin</string>
+    <string name="login">Đăng nhập</string>
+    <string name="language">Chọn nguôn ngữ</string>
+    <string name="information">Thông tin</string>
+    <string name="titleTableUsing">Bàn đang sử dụng</string>
+    <string name="titleTableEmpty">Bàn trống</string>
+    <string name="user">Người dùng</string>
+    <string name="listcost">Quản lý danh mục</string>
+    <string name="code">Mã</string>
+    <string name="namecost">Tên chi phí</string>
+    <string name="cost">Giá cả</string>
+    <string name="note">Ghi chú</string>
+    <string name="typecost">Loại chi phí</string>
+    <string name="groupcost">Nhóm chi phí</string>
+    <string name="description">Chi tiết</string>
+    <string name="addnew">Thêm mới</string>
+    <string name="update">Sửa</string>
+    <string name="delete">Xóa</string>
+    <string name="noticepress">Vui lòng nhập đầy đủ thông tin!</string>
+    <string name="tablecost">Bảng chi phí</string>
+    <string name="food">Đồ ăn</string>
+    <string name="drinks">Rượu</string>
+    <string name="coffe">Món rau</string>
+    <string name="report">Thống kê - Báo cáo</string>
+    <string name="tvTitleComment">Hãy thêm yêu cầu!</string>
+    <string name="tvHoaDonUser">"Tên khách hàng: "</string>
+    <string name="tvHoaDonDiaChi">"Địa chỉ: "</string>
+
+    <string-array name="spendstatus">
+        <item>Chi ra</item>
+        <item>Thu về</item>
+    </string-array>
+
+    <!-- REPORT CAPTION -->
+    <string name="report_index">STT</string>
+    <string name="report_date">Ngày tháng</string>
+    <string name="report_inv">Tổng Hóa đơn</string>
+    <string name="report_Revenue">Tổng doanh thu</string>
+    <string name="report_average">Trung bình</string>
+    <!--  -->
+    <string name="report_spending">Tổng chi phí</string>
+    <string name="report_benefit">Tổng lợi nhuận</string>
+    <!-- btn -->
+    <string name="report_btn1">Thống kê doanh thu</string>
+    <string name="report_btn2">Báo cáo thu chi</string>
+    <string name="report_btn3">Thống kê món ăn</string>
+    <string name="report_btn4">Thống kê hóa đơn</string>
+    <string name="report_txtselect">Chọn theo ngày:</string>
+    <string name="report_txtselect1">Từ</string>
+    <string name="report_txtselect2">Đến</string>
+    <string name="report_sumtotal">TỔNG CỘNG</string>
+    <!-- report item -->
+    <string name="report_itemname">Tên món ăn</string>
+    <string name="report_itemamount">Số lượng</string>
+    <string name="report_itemunit">Đơn vị</string>
+    <string name="report_itemtotal">Tổng</string>
+    <string name="report_unit">Đĩa</string>
+
+    <!-- Currency -->
+    <string name="curr">\u0020 đ</string>
+    <string name="addtable">Cài đặt bàn</string>
+    <string name="addfloor">Thêm tầng</string>
+    <string name="freetable"> Tick bàn để giải phóng</string>
+    <string name="dongy">Đồng ý</string>
+    <string name="boqua">Bỏ qua</string>
+    <string name="maptitle">Bạn có muốn tạo mới hóa đơn bàn</string>
+    <string name="editfloor">Sửa tên tầng </string>
+    <string name="deletefllor">Xóa tầng </string>
+
+    <string-array name="optionfloor">
+        <item>Bạn có muốn đổi tên tẩng?</item>
+        <item>Bạn muốn xóa tầng này?</item>
+    </string-array>
+    <!-- COOKER -->
+    <string name="cooktitle">CÁC MÓN ĂN CẦN LÀM TRONG NGÀY</string>
+    <string name="cooktitledetail1">Tổng số món cần làm</string>
+    <string name="cooktitledetail2">Số lượng món đã đặt</string>
+    <string name="cooktitledetail3">Số lượng món làm xong</string>
+    <string name="cookadd">Thêm món ăn</string>
+    <string name="cookaddok">Thêm</string>
+    <string name="cookaddnok">Hủy</string>
+    <string name="cookmsg"> Số lượng nhập phải nhỏ hơn </string>
+    <string name="cookdalogtitle"> Bạn muốn thoát ? </string>
+    <!-- print -->
+    <string name="payment">Thanh toán</string>
+    <string name="debit">Ghi nợ</string>
+    <string name="cancel">Hủy</string>
+    <!-- menu -->
+    <string name="statistics_report">Thống kê-Báo cáo</string>
+    <string name="expenses_invoice">Hóa đơn chi phí</string>
+    <string name="updvoice">Cập nhật âm thanh</string>
+    <string name="notvoice">Hãy cập nhật âm thanh tại phần cài đặt!</string>
+    <string name="testcodetable">Hãy kiểm tra lại mã bàn!</string>
+    <string name="exit">Bạn muốn thoát?</string>
+    <string name="adddishes">Thêm món ăn</string>
+    <string name="createinvoice">Taọ mới hoá đơn</string>
+    <string name="add">Thêm</string>
+    <string name="questiondelete">Bạn có muốn xóa không?</string>
+    <string name="connectsucess">Kết nối thành công!</string>
+    <string name="inputIP">Hãy nhập vào địa chỉ IP!</string>
+    <string name="connectfail">Kết nối lỗi, hãy nhập lại địa chỉ IP!</string>
+    <string name="noticeamount">Số lượng phải có giá trị lớn hơn 0</string>
+    <string name="loadinvDefailed">Quá trình tải chi tiết hoá đơn gặp lỗi!</string>
+    <string name="choosetable">Hãy chọn bàn!</string>
+    <string name="choosetable2">Chọn bàn!</string>
+    <string name="chooseinvoice">Chỉ chọn 1 hoá đơn!</string>
+    <string name="cantfreetable">Không thể giải phóng bàn, hãy kiểm tra lại !</string>
+    <string name="choose2table">Hãy chọn ít nhất 2 bàn !</string>
+    <string name="cantspilit">Không thể tách hoá đơn !</string>
+    <string name="inoutallinfo">Hãy nhập đầy đủ thông tin !</string>
+    <string name="exitlogout">Ấn vào nút đăng xuất để thoát!</string>
+    <string name="failconnect">Kết nối thất bại, hãy kiểm tra lại</string>
+    <string name="notinsertfood">Bạn chưa thêm món ăn</string>
+    <string name="select1invoice">Hãy chọn 1 hoá đơn!</string>
+    <string name="selectchoosetable">Chọn bàn</string>
+    <string name="choosfreetable">Chọn giải phóng bàn</string>
+    <string name="Index">STT</string>
+    <string name="Name">Tên bàn</string>
+    <string name="Total">Tổng tiền</string>
+    <string name="report2">Báo cáo</string>
+    <string name="price">Giá cả</string>
+    <string name="Payfor">Chi cho</string>
+    <string name="Spending">Chi phí</string>
+    <string name="Status">Trạng thái</string>
+    <string name="Personpay">Người chi</string>
+    <string name="Purpose">Mục đích chi</string>
+    <string name="Invoicename">Tên hoá đơn</string>
+    <string name = "logintime">Thời gian đăng nhập: </string>
+    <string name = "expense">Chi tiêu</string>
+		<string name="earning">Thu nhập</string>
+    
+<string name="btnConnectIPAddress">Kết nối</string>
+</resources>

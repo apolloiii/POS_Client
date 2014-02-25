@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#323232"
+    android:orientation="vertical"
+    android:weightSum="20" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1"
+        android:background="@drawable/ngoc_menu_button_notradius"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/index"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Index"
+                android:textColor="#FFFFFF"
+                android:textSize="20.0dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/nameitem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Name"
+                android:textColor="#FFFFFF"
+                android:textSize="20.0dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/note_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Total"
+                android:textColor="#FFFFFF"
+                android:textSize="20.0dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="16"
+        android:drawSelectorOnTop="false" >
+    </ListView>
+<!-- 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:background="#323232"
+        android:orientation="horizontal"
+        >
+		
+        <Button
+            android:id="@+id/btn_Destroy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+             android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_footer_destroy"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_split"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_footer_split"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_Coupling"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_footer_join"
+            android:textColor="#FFFFFF" />
+        
+        <Button
+            android:id="@+id/btn_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_volume"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/addNewInvoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_footer_add"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_footer_caculator"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnFreeTable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:background="@drawable/button_click"
+            android:drawableTop="@drawable/selector_footer_free"
+            android:textColor="#FFFFFF" />
+        
+    </LinearLayout>
+ -->
+</LinearLayout>

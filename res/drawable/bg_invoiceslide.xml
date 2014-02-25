@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shoppingcart_add" android:state_pressed="false">
+        <shape>
+            <solid android:color="#ff445374"/>
+            <gradient android:angle="270" android:centerColor="#A0A8B8" android:endColor="#ff445374" android:startColor="#ff445374" />
+        </shape></item>
+    <item android:drawable="@drawable/shoppingcart_add" android:state_pressed="true">
+        <shape>
+            <solid android:color="#A0A8B8"/>
+            <gradient android:angle="270" android:centerColor="#A0A8B8" />
+        </shape></item>
+
+</selector>

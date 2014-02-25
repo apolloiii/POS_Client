@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ngoc_menu_button"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <!--  <Button
+        android:id="@+id/btnMap"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="1.8"
+        android:background="@drawable/ngoc_header_button"
+        android:drawableTop="@drawable/menu_icon_map"
+        android:minWidth="100sp"
+        android:onClick="menuButtonClick"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:text="@string/header_pos_TableMap"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:background="#4C4C4C" /> -->
+ 
+    <Button
+        android:id="@+id/btnInvoice"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="2"
+        android:background="@drawable/ngoc_header_button"
+        android:drawableTop="@drawable/menu_icon_waiter"
+        android:minWidth="100sp"
+        android:onClick="menuButtonClick"
+        android:text="@string/header_pos_Invoice"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+   <!--  <TextView
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:background="#4C4C4C" />
+
+    <Button
+        android:id="@+id/btnKitchen"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="2"
+        android:background="@drawable/ngoc_header_button"
+        android:drawableTop="@drawable/menu_icon_cook1"
+        android:minWidth="100sp"
+        android:onClick="menuButtonClick"
+        android:padding="3dip"
+        android:paddingTop="7dp"
+        android:text="@string/header_pos_Kitchen"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:background="#4C4C4C" />
+
+    <Button
+        android:id="@+id/btnPayment"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="2"
+        android:background="@drawable/ngoc_header_button"
+        android:drawableTop="@drawable/menu_icon_payment"
+        android:minWidth="100sp"
+        android:onClick="menuButtonClick"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:text="@string/header_pos_Payment"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:background="#4C4C4C" />
+
+    <LinearLayout
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:background="@drawable/ngoc_menu_button" >
+
+        <ImageButton
+            android:id="@+id/btnSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@drawable/ngoc_header_button"
+            android:minWidth="100sp"
+            android:onClick="menuButtonClick"
+            android:src="@drawable/menu_icon_setting"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#4C4C4C" />
+
+        <ImageButton
+            android:id="@+id/btnLogin_Out"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@drawable/ngoc_header_button"
+            android:minWidth="100sp"
+            android:onClick="menuButtonClick"
+            android:src="@drawable/menu_icon_logout"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+ -->
+</LinearLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="100" >
+
+    <!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        android:background="#00739F"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imgOrderImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvOrderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="tvOrderName"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="("
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFF00" />
+
+            <TextView
+                android:id="@+id/tvOrderAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="100"
+                android:textStyle="bold"
+                android:textColor="#FFFF00"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text=")"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFF00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="25"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/etOrderDalam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="5"
+                android:enabled="false"
+                android:focusable="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:text="0"
+                android:background="#74E3FD"
+                android:textStyle="bold"
+                android:textColor="#003D69" >
+            </EditText>
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:id="@+id/etOrderConlai"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="5"
+                android:enabled="false"
+                android:focusable="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:text="0"
+                android:background="#77CFF7"
+                android:textStyle="bold"
+                android:textColor="#003D69" >
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>    -->
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="90"
+        android:background="#3D3C3C"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imgOrderImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:src="@drawable/anh1" />
+
+        <TextView
+            android:id="@+id/tvOrderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hao hao"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/tvOrderAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_cook"
+            android:text="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/etOrderDalam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_cook"
+            android:text="2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#E48C0D"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/etOrderConlai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_cook"
+            android:text="3"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#58FEFB"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

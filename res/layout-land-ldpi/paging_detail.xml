@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingBottom="5dp"
+   
+    android:background="@drawable/shape_bggridvew"
+    android:weightSum="10" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="left"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:weightSum="10" >
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="7">
+
+        <ImageView
+            android:id="@+id/imgMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/desert" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="100" >
+
+                <TextView
+                    android:id="@+id/tvTenMonAn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:layout_weight="20"
+                    android:text="Caption"
+                    android:textColor="#000000"
+                    android:textSize="20dip"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvGiaTien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="80"
+                    android:text="$65"
+                    android:textColor="#000000"
+                    android:textSize="20dip"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp" >
+
+                <TextView
+                    android:id="@+id/txtDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dip"
+                    android:maxLines="2"
+                    android:text="fadjflafj;asdfj;adfa;f \n fjdslfjalfjalfladfja"
+                    android:textColor="#000000"
+                    android:textSize="20dip"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:gravity="center"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_weight="90"
+            android:background="@drawable/shape"
+            >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:src="@android:drawable/btn_star_big_on" />
+
+            <TextView
+                android:id="@+id/txtDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="Like"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:layout_weight="10" >
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@android:drawable/arrow_down_float"
+             	android:layout_marginRight="10dp"
+                android:onClick="menuButtonClick"
+                android:text="    Add"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

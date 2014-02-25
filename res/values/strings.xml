@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">POS Client</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <!-- User String -->
+    <string name="username">Client \u0020</string>
+    <string name="invoiceemail">Table \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="invoicetimein">Time In    \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="invoicetimeout">Time Out   \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020  </string>
+    <string name="titleinvoice">REPORT LIST OF ITEMS</string>
+    <string name="invoiceaddress">Address  \u0020\u0020</string>
+    <string name="invoicephone">Phone  \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020</string>
+
+    <!-- The Menu String -->
+    <string name="table_map_menu">Table Map</string>
+    <string name="invoice_menu">Invoice</string>
+    <string name="setting_menu">Settings</string>
+    <string name="strackingmap">GoogleMap</string>
+    <string name="login_out">Sign In</string>
+    <!-- Buttonn String -->
+    <string name="btnConnectIPAddress">Connect</string>
+    <string name="btnCancelIPAddress">Cancel</string>
+
+    <!-- invoice button -->
+    <string name="inv_destroy">Destroy</string>
+    <string name="inv_addnew">New</string>
+    <string name="inv_calculator">Calculator</string>
+    <string name="inv_freetable">Free</string>
+    <!-- Info Company III -->
+
+    <string name="CompanyName">CÔNG TY TNHH MỘT THÀNH VIÊN CÔNG NGHỆ VÀ TRUYỀN THÔNG 3I</string>
+    <string name="CompanyAaddress">Địa chỉ: Nhà B1-4 Khu đô thị Hạ Đình - Thanh Xuân - Hà Nội</string>
+    <string name="CompanyPhone">Điện thoại: 04. 6292 6186 \t\t 04.6285 0844  \n\t\t\t 04.2214 6285 \t\t 04.6285 0842</string>
+    <string name="CompanyFax">Fax: 04 6285 0843</string>
+    <string name="CompanyEmail">Email: info@3i.com.vn</string>
+    <string name="CompanyNote">© Bản quyền thuộc Công ty TNHH Một Thành Viên Công Nghệ và Truyền Thông 3I</string>
+
+    <!-- Currency -->
+    <string name="convertTo">Convert To\n>></string>
+    <string name="Unit">Unit : </string>
+    <string name="Result">Result : </string>
+    <string name="Convert">Convert</string>
+    <string name="Cancel">Cancel</string>
+
+    <!-- Map -->
+
+    <string name="floor1">F1  </string>
+    <string name="floor2">F2  </string>
+    <string name="floor3">F3 </string>
+    <string name="floor4">F4 </string>
+    <string name="prefDefault_alerts_vibrateWhen">sdksdkjsjkd</string>
+    <string name="tardis">abc</string>
+    <string name="preferences_week_start_day_default">start day default</string>
+    <string name="preferences_home_tz_default">sdfâc,sd</string>
+
+    <string-array name="preferences_week_start_day_values">
+        <item>fhjs</item>
+        <item>dbsdfl</item>
+        <item>dsbfsdf</item>
+        <item>oek</item>
+    </string-array>
+    <string-array name="timezone_values">
+        <item>dnsfnsdf</item>
+        <item>đsfsdf</item>
+        <item>dhdhd</item>
+        <item>sekn</item>
+    </string-array>
+    <string-array name="preferences_default_reminder_values">
+        <item>sfs,dfsd,</item>
+        <item>kldgd</item>
+        <item>fskdfjklsd</item>
+        <item>sdfsdfs</item>
+        <item>kldgd</item>
+    </string-array>
+    <string-array name="prefValues_alerts_vibrateWhen">
+        <item>skjsjksg</item>
+        <item>sđksds</item>
+        <item>jfgdf</item>
+        <item>aểtr</item>
+        <item>skjsjksg</item>
+    </string-array>
+    <string-array name="buttons" translatable="true">
+        <item>@+id/clear</item>
+        <item>@+id/del</item>
+        <item>@+id/sin</item>
+        <item>@+id/ln</item>
+        <item>@+id/cos</item>
+        <item>@+id/lg</item>
+        <item>@+id/tan</item>
+        <item>@+id/e</item>
+        <item>@+id/pi</item>
+        <item>@+id/power</item>
+        <item>@+id/factorial</item>
+        <item>@+id/sqrt</item>
+        <item>@+id/digit7</item>
+        <item>@+id/digit8</item>
+        <item>@+id/digit9</item>
+        <item>@+id/div</item>
+        <item>@+id/leftParen</item>
+        <item>@+id/digit4</item>
+        <item>@+id/digit5</item>
+        <item>@+id/digit6</item>
+        <item>@+id/mul</item>
+        <item>@+id/rightParen</item>
+        <item>@+id/digit1</item>
+        <item>@+id/digit2</item>
+        <item>@+id/digit3</item>
+        <item>@+id/minus</item>
+        <item>@+id/digit0</item>
+        <item>@+id/dot</item>
+        <item>@+id/plus</item>
+        <item>@+id/equal</item>
+    </string-array>
+    <string-array name="simple_buttons">
+        <item>@+id/digit7</item>
+        <item>@+id/digit8</item>
+        <item>@+id/digit8</item>
+        <item>@+id/leftParen</item>
+        <item>@+id/rightParen</item>
+        <item>@+id/mul</item>
+        <item>@+id/digit4</item>
+        <item>@+id/digit5</item>
+        <item>@+id/digit6</item>
+        <item>@+id/dot</item>
+        <item>@+id/div</item>
+        <item>@+id/minus</item>
+        <item>@+id/digit1</item>
+        <item>@+id/digit2</item>
+        <item>@+id/digit3</item>
+        <item>@+id/digit0</item>
+        <item>@+id/equal</item>
+        <item>@+id/plus</item>
+    </string-array>
+    <string-array name="advanced_buttons">
+        <item>@+id/advanced</item>
+        <item>@+id/cos</item>
+        <item>@+id/tan</item>
+        <item>@+id/pi</item>
+        <item>@+id/factorial</item>
+        <item>@+id/ln</item>
+        <item>@+id/lg</item>
+        <item>@+id/e</item>
+        <item>@+id/power</item>
+        <item>@+id/sqrt</item>
+    </string-array>
+
+    <!-- If there is a syntax error in the user entered calculation, an error dialog will appear.  This is the title. -->
+    <string name="error">Error</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit0">0</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit1">1</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit2">2</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit3">3</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit4">4</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit5">5</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit6">6</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit7">7</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit8">8</string>
+    <!-- Displayed numbers for the digit buttons -->
+    <string name="digit9">9</string>
+    <!-- Button name on screen to delete the last entered digit or operator -->
+    <string name="del">DELETE</string>
+    <!-- Button name on screen to clear the entire calculation field. [CHAR LIMIT=6] -->
+    <string name="clear">CLR</string>
+    <!-- Do not translate. Unicode division sign; don't translate. Displayed as button on screen. -->
+    <string name="div">\u00f7</string>
+    <!-- Do not translate. Unicode multiplication sign; don't translate. Displayed as button on screen. -->
+    <string name="mul">\u00d7</string>
+    <!-- Do not translate. Plus sign, displayed as button on screen -->
+    <string name="plus">+</string>
+    <!-- Do not translate. Unicode minus sign; don't translate. Displayed as button on screen. -->
+    <string name="minus">\u2212</string>
+    <!-- Do not translate. Decimal point; don't translate. Displayed as button on screen. -->
+    <string name="dot">.</string>
+    <!-- Do not translate. Equal sign; don't translate. Displayed as button on screen. -->
+    <string name="equal">=</string>
+    <!-- Do not translate. Down arrow; don't translate. Displayed as button on screen. -->
+    <string name="enter">\u2193</string>
+    <!-- Displayed on buttons on screen for the sin function. -->
+    <string name="sin">sin</string>
+    <!-- Do not translate. What we replace translated SIN with for calculating sin. -->
+    <string name="sin_mathematical_value" translate="false">sin</string>
+    <!-- Displayed on buttons on screen for the cos function. -->
+    <string name="cos">cos</string>
+    <!-- Do not translate. What we replace translated COS with for calculating cos. -->
+    <string name="cos_mathematical_value" translate="false">cos</string>
+    <!-- Displayed on buttons on screen for the tan function. -->
+    <string name="tan">tan</string>
+    <!-- Do not translate. What we replace translated TAN with for calculating tan. -->
+    <string name="tan_mathematical_value" translate="false">tan</string>
+    <!-- Do not translate. Unicode pi sign; don't translate. Displayed as button on screen. -->
+    <string name="pi">\u03c0</string>
+    <!-- Displayed on buttons on screen for the e function. -->
+    <string name="e">e</string>
+    <!-- Do not translate. What we replace translated e with for calculating e. -->
+    <string name="e_mathematical_value" translate="false">e</string>
+    <!-- Displayed on buttons on screen for the ln function. -->
+    <string name="ln">ln</string>
+    <!-- Do not translate. What we replace translated ln with for calculating ln. -->
+    <string name="ln_mathematical_value" translate="false">ln</string>
+    <!-- Displayed on buttons on screen for the log function. -->
+    <string name="lg">log</string>
+    <!-- Do not translate. What we replace translated lg with for calculating lg. -->
+    <string name="lg_mathematical_value" translate="false">lg</string>
+    <!-- Displayed on buttons on screen for a left parenthesis. -->
+    <string name="leftParen">(</string>
+    <!-- Displayed on buttons on screen for a right parenthesis. -->
+    <string name="rightParen">)</string>
+    <!-- Do not translate. Unicode square root sign; don't translate. Displayed on button on screen. -->
+    <string name="sqrt">\u221a</string>
+    <!-- Do not translate. Displayed on buttons on screen. -->
+    <string name="power">^</string>
+    <!-- Do not translate. -->
+    <string name="factorial">!</string>
+    <!-- Menu item text to take user to the screen with the basic digits and operators. -->
+    <string name="basic">Basic panel</string>
+    <!-- Menu item text to take user to the screen with the advanced functions, such as sin, cos, ln, log, etc. -->
+    <string name="advanced">Advanced panel</string>
+    <!-- Menu item text to clear the calculation history. -->
+    <string name="clear_history">Clear history</string>
+    <!-- Menu item text to clear the calculation history. -->
+    <string name="finish">Finish</string>
+    <!-- Toast shown when text is copied to the clipboard. -->
+    <string name="text_copied_toast">Text copied.</string>
+
+    <!--
+    Content descriptions for accessibility. These strings will be read aloud to users who are using the calculator with
+    accessibility features enabled and should reflect the mathematical concept instead of a direct representation of what is shown
+    on the button
+    -->
+    <string name="leftParenDesc">left parenthesis</string>
+    <string name="rightParenDesc">right parenthesis</string>
+    <string name="factorialDesc">factorial</string>
+    <string name="lnDesc">natural logarithm</string>
+    <string name="lgDesc">logarithm</string>
+    <string name="sqrtDesc">square root</string>
+    <string name="divDesc">divide</string>
+    <string name="mulDesc">multiply</string>
+    <string name="plusDesc">plus</string>
+    <string name="minusDesc">minus</string>
+    <string name="dotDesc">point</string>
+    <string name="powerDesc">power</string>
+    <string name="delDesc">delete</string>
+    <string name="clearDesc">clear</string>
+    <string name="tanDesc">tangent</string>
+    <string name="sinDesc">sine</string>
+    <string name="cosDesc">cosine</string>
+    <string name="eDesc">Euler\'s number</string>
+    <string name="piDesc">pi</string>
+    <string name="equalDesc">equals</string>
+
+    <!--
+    Content descriptions for accessibility used as keys when determining which mathematical
+    concept description to speak when accessibility features are enabled. Order of the array is
+    important.
+    -->
+    <string-array name="operators" translatable="false">
+        <item>(</item>
+        <item>)</item>
+        <item>!</item>
+        <item>ln</item>
+        <item>log</item>
+        <item>\u221a</item>
+        <item>\u00f7</item>
+        <item>\u00d7</item>
+        <item>+</item>
+        <item>\u2212</item>
+        <item>.</item>
+        <item>^</item>
+        <item>tan</item>
+        <item>sin</item>
+        <item>cos</item>
+        <item>\u03c0</item>
+        <item>=</item>
+    </string-array>
+
+    <!--
+     Content descriptions for accessibility. These strings will be read aloud to users who
+     are using the calculator with accessibility features enabled and hover over the edit text
+     field. These should reflect the mathematical concept instead of a direct representation of
+     what is shown in the text field. Order of the array is important.
+    -->
+    <string-array name="operatorDescs">
+
+        <!-- Description for mathematical ( [CHAR LIMIT=200] -->
+        <item>left parenthesis</item>
+        <!-- Description for mathematical ) [CHAR LIMIT=200] -->
+        <item>right parenthesis</item>
+        <!-- Description for mathematical ! (factorial) function [CHAR LIMIT=200] -->
+        <item>factorial</item>
+        <!-- Description for mathematical ln [CHAR LIMIT=200] -->
+        <item>natural logarithm</item>
+        <!-- Description for mathematical log [CHAR LIMIT=200] -->
+        <item>logarithm</item>
+        <!-- Description for mathematical square root [CHAR LIMIT=200] -->
+        <item>square root</item>
+        <!-- Description for mathematical / [CHAR LIMIT=200] -->
+        <item>divided by</item>
+        <!-- Description for mathematical x [CHAR LIMIT=200] -->
+        <item>multiplied by</item>
+        <!-- Description for mathematical + [CHAR LIMIT=200] -->
+        <item>plus</item>
+        <!-- Description for mathematical - [CHAR LIMIT=200] -->
+        <item>minus</item>
+        <!-- Description for mathematical . [CHAR LIMIT=200] -->
+        <item>&#160;point&#160;</item>
+        <!-- Description for mathematical ^ [CHAR LIMIT=200] -->
+        <item>power</item>
+        <!-- Description for mathematical TAN [CHAR LIMIT=200] -->
+        <item>tangent</item>
+        <!-- Description for mathematical SIN [CHAR LIMIT=200] -->
+        <item>sine</item>
+        <!-- Description for mathematical COS [CHAR LIMIT=200] -->
+        <item>cosine</item>
+        <!-- Description for mathematical PI [CHAR LIMIT=200] -->
+        <item>pi</item>
+        <!-- Description for mathematical = [CHAR LIMIT=200] -->
+        <item>equals</item>
+    </string-array>
+
+    <string name="refresh">Làm Mới</string>
+    <string name="btnAddnew">Thêm Mới</string>
+    <string name="btnBackPage">Back</string>
+    <string name="btnNextPage">Next</string>
+    <string name="btntextThanhToan">Thanh Toán</string>
+
+    <string-array name="spnVat">
+       <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="spnComposition">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+
+    <string name="tvHoaDonThanhToan">INVOICES OF PAYMENT</string>
+    <string name="tvHoaDonUser">"CUSTOMER NAME: "</string>
+    <string name="tvHoaDonDiaChi">"ADDRESS: "</string>
+    <string name="tvHoaDonSDT">"PHONE NUMBER: "</string>
+    <string name="tvHoaDonTitle">"EATEN FOODS "</string>
+    <string name="titleTableUsing">Using Table</string>
+    <string name="titleTableEmpty">Empty Table</string>
+    <string name="titleTableOoccupy">Occupy Table</string>
+    <string name="addinvdetailtitle">You dont add anny item !</string>
+    <string name="addinvdetailmsg">Do you want to exits ?!</string>
+    <string name="tvTitleComment">Please add comment!</string>
+    <string name="inv_commition"> Commition</string>
+    <string name="inv_total"> Total</string>
+    <string name="inv_Viewer">Join</string>
+    <string name="inv_split">Split</string>
+    <string name="titleTachban">Please Select</string>
+    <string name="OK">Ok</string>
+    <string name="transferItem">Transfer item</string>
+    <string name="inv_add_ChooseTable">Choose table</string>
+    <string name="inv_add_Inv">Add</string>
+    <string name="invoice_add_hint_client">client</string>
+    <string name="invoice_add_hint_Time_in">time in</string>
+    <string name="invoice_add_hint_Time_out">time out</string>
+    <string name="invoice_add_hint_PhoneNumber">phone number</string>
+    <string name="header_pos_TableMap">Table Map</string>
+    <string name="header_pos_Invoice">Waiters</string>
+    <string name="header_pos_Kitchen">Kitchen</string>
+    <string name="header_pos_Payment">Cashier</string>
+    <string name="spilitInvoice">Spilit Invoice</string>
+    <string name="joinInvoice">Join Invoice</string>
+    <string name="totalInvoice">Total:</string>
+    <string name="selectIvoice">Select Invoice To Join</string>
+    <string name="joined_Invoice">Joined Invoice</string>
+    <string name="itemcode">Code Item</string>
+    <string name="amount">Number</string>
+    <string name="rememberme">Remember Me</string>
+    <string name="login">Login</string>
+    <string name="language">Language</string>
+    <string name="settingmenu_itablemanager">Itable Manager</string>
+    <string name="information">Information</string>
+    <string name="listcost">List Cost</string>
+    <string name="report">Report</string>
+    <string name="user">USER</string>
+    <string name="code">Code</string>
+    <string name="namecost">Name Cost</string>
+    <string name="cost">Cost</string>
+    <string name="note">Notes</string>
+    <string name="typecost">Type Cost</string>
+    <string name="groupcost">Group Cost</string>
+    <string name="description">Description</string>
+    <string name="addnew">Add new</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="noticepress">Please enter all information!</string>
+    <string name="tablecost">Table cost</string>
+    <string name="food">Food</string>
+    <string name="drinks">Wine</string>
+    <string name="coffe">Vegetables</string>
+    <string name="invoicespending">Invoice Spending</string>
+      <string name="updvoice">Update Voices</string>
+
+    <string-array name="spendstatus">
+        <item>expense</item>
+        <item>earning</item>
+    </string-array>
+
+    <!-- REPORT CAPTION -->
+    <string name="report_index">No</string>
+    <string name="report_date">Date</string>
+    <string name="report_inv">TotalInvoice</string>
+    <string name="report_Revenue">TotalRevenue</string>
+    <string name="report_average">Average</string>
+    <!--  -->
+    <string name="report_spending">Spending</string>
+    <string name="report_benefit">Total benefit</string>
+    <!-- btn -->
+    <string name="report_btn1">Report Revenue</string>
+    <string name="report_btn2">Report Income</string>
+    <string name="report_btn3">Report Items</string>
+    <string name="report_btn4">Report Invoice</string>
+    <string name="report_txtselect">Select date:</string>
+    <string name="report_txtselect1">From</string>
+    <string name="report_txtselect2">To</string>
+    <string name="report_sumtotal">TOTAL</string>
+    <!-- report item -->
+    <string name="report_itemname">Item name</string>
+    <string name="report_itemamount">Amount</string>
+    <string name="report_itemunit">Unit</string>
+    <string name="report_itemtotal">Total</string>
+    <string name="report_unit">Disc</string>
+
+    <!-- Currency -->
+    <string name="curr">\u0020 $</string>
+    <string name="addtable">Setting Table</string>
+    <string name="addfloor">Floor Name</string>
+    <string name="createinvoice">Create new Invoice</string>
+    <string name="freetable">Select tables to free</string>
+    <string name="dongy">OK</string>
+    <string name="boqua">NO</string>
+    <string name="maptitle">Do you want to make new invoice on </string>
+    <string name="editfloor">Edit floor name </string>
+    <string name="deletefllor">Delete floor </string>
+
+    <string-array name="optionfloor">
+        <item>Do you want to edit floor name?</item>
+        <item>Do you want to delete floor?</item>
+    </string-array>
+    <!-- COOKER -->
+    <string name="cooktitle">ALL ITEMS ON DAY</string>
+    <string name="cooktitledetail1">Total items on day</string>
+    <string name="cooktitledetail2">Items need to make</string>
+    <string name="cooktitledetail3">Items made</string>
+    <string name="cookadd">Add Item</string>
+    <string name="cookaddok">Add</string>
+    <string name="cookaddnok">Cancel</string>
+    <string name="cookmsg"> Quantity must be less than </string>
+    <string name="cookdalogtitle"> Do you want to exit ? </string>
+    <!-- print -->
+     <string name="payment">Pay ment</string>
+     <string name = "debit">Debit</string>
+     <string name = "cancel">Cancel</string>
+     
+      <!-- menu -->
+     <string name="statistics_report">Statistics-Report</string>
+     <string name="expenses_invoice">Expenses Invoice</string>
+      <string name="notvoice">Please update voice at setting!</string>
+      <string name="testcodetable">Please test code table!</string>
+      <string name = "exit">Do you want to exit?</string>
+      
+      <string name="adddishes">Add dishes</string>
+      <string name="add">Add</string>
+      <string name="questiondelete">Do you want delete ?</string>
+      
+      <string name="connectsucess">Connect success!</string>
+      <string name="inputIP">Please Input IP Address!</string>
+      <string name="connectfail">Connect Failed, Please Input IP Address Again!</string>
+      <string name="noticeamount">Amount must be greater than 0!</string>
+      
+      <string name="loadinvDefailed">Load invoice detail failed</string>
+       <string name="choosetable">Please choose table!</string>
+       <string name="choosetable2">Choose table!</string>
+       <string name="chooseinvoice">Please select only a invoice !</string>
+       <string name="cantfreetable">Can not free table, check again please !</string>
+       <string name="choose2table">Please select at least 2 tables !</string>
+       <string name="cantspilit">Can not spilit invoice !</string>
+       <string name="inoutallinfo">Please enter all information !</string>
+       <string name="exitlogout">Press logout button to exit</string>
+       <string name="failconnect">Fault please try again</string>
+       <string name="notinsertfood">You not yet add dishes</string>
+       <string name="select1invoice">Please only 1 invoice!</string>
+       
+       <string name="selectchoosetable">Choose table</string>
+        <string name="choosfreetable">Choose free table</string>
+        
+        <string name="Index">Index</string>
+           <string name="Name">Name</string>
+         	<string name="Total">Total</string>
+		<string name="report2">REPORT</string>
+		<string name="price">Price</string>
+		<string name="Payfor">Pay for</string>
+		<string name="Spending">Spending</string>
+		<string name="Status">Status</string>
+		<string name="Personpay">Person pay</string>
+		<string name="Purpose">Purpose</string>
+		<string name="Invoicename">Invoice name</string>
+		<string name="customname">Custom name</string>
+		<string name="addres">Address</string>
+		<string name="namefood">Name</string>
+		<string name="amount1">Amount</string>
+		<string name="currency1">Currency</string>
+		<string name="costtable">Cost table</string>
+		<string name="inv_vat"> VAT</string>
+		<string name="refreshscreen">Please refresh to see new table</string>
+		<string name = "logintime">LOGIN TIME: </string>
+		
+		<string name = "expense">Expense</string>
+		<string name="earning">Earning</string>
+</resources>

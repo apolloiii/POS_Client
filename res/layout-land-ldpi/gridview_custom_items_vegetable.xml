@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+               android:id="@+id/imgVeget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:src="@drawable/natureimage3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="2"
+                 >
+
+                <TextView
+                     android:id="@+id/txtNameVeget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:text="Gia"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                      android:id="@+id/txtCost_Veget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="sdvsxv"
+                    android:textColor="#fff"
+                    android:textSize="10.0dip"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/textQuantityVeget"
+                    android:layout_width="45dp"
+                    android:layout_height="0.0dip"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/txtbackground"
+                    android:focusable="false"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="5dp" />
+
+                <ImageView
+                    android:id="@+id/btnCommentVeget"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/menu_comment" />
+
+                <CheckBox
+                       android:id="@+id/checkSelect_Veget"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:button="@drawable/selectcheckbox"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6295CC"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60.0dip"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="20dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.8"
+            android:gravity="left|center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnchoosetable"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/txtbackground"
+                android:ems="6"
+                android:text="Choose table"
+                android:textColor="#000"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+
+            <EditText
+                android:id="@+id/Text_Time_In"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_weight="2"
+                android:background="@drawable/txtbackground"
+                android:enabled="false"
+                android:lines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:maxLines="1"
+                android:hint="@string/invoicetimein"
+                android:textSize="10sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+
+            <EditText
+                android:id="@+id/Text_Time_Out"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_weight="2"
+                android:background="@drawable/txtbackground"
+                android:enabled="false"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_marginRight="20dp"
+                android:hint="@string/invoicetimeout"
+                android:paddingLeft="20dp"
+                android:textSize="10sp" >
+            </EditText>
+        </LinearLayout>
+
+       
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60.0dip"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="0dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+         <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+
+            <EditText
+                android:id="@+id/Text_Phone"
+                android:layout_width="fill_parent"
+                android:layout_height="45.0dip"
+                android:layout_weight="2"
+                android:background="@drawable/txtbackground"
+                android:inputType="phone|number"
+                 android:hint="@string/invoicephone"
+                 android:paddingLeft="20dp"
+                android:textSize="10sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/Text_UserName"
+                android:layout_width="fill_parent"
+                android:layout_height="45.0dip"
+                android:layout_weight="3.8"
+                android:hint="@string/username"
+                android:paddingLeft="20dp"
+                android:background="@drawable/txtbackground"
+                android:textSize="10sp" >
+            </EditText>
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+
+       
+    </LinearLayout>
+     <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+
+            <EditText
+                android:id="@+id/Text_Address"
+                android:layout_width="fill_parent"
+                android:layout_height="45.0dip"
+                android:layout_weight="5"
+                android:paddingLeft="20dp"
+                android:hint="@string/invoiceaddress"
+                android:background="@drawable/txtbackground"
+                android:textSize="10sp" >
+            </EditText>
+        </LinearLayout>
+
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal" >
+
+        <ImageButton
+            android:id="@+id/btn_Add_New"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_bo"
+            android:layout_marginRight="0.5dp"
+            android:src="@drawable/menu_ok"
+          	 android:gravity="center"
+            android:ems="6" />
+        <TextView 
+            android:layout_width="0.5dip"
+            android:layout_height="fill_parent"
+            android:background="#6295CC"/>
+
+        <ImageButton
+            android:id="@+id/btn_Cancel"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_bo"
+            android:src="@drawable/menu_cancel1"
+            android:ems="6" />
+    </LinearLayout>
+    
+
+</LinearLayout>

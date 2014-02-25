@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#6295cc"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <!-- the row one of tables -->
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- table one -->
+
+            <LinearLayout
+                android:id="@+id/lnbtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 1"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn1"
+                    android:tag="btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+
+            <!-- table two -->
+
+            <LinearLayout
+                android:id="@+id/lnbtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 2"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn2"
+                    android:tag="btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table three -->
+
+            <LinearLayout
+                android:id="@+id/lnbtn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 3"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn3"
+                    android:tag="btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table four -->
+
+            <LinearLayout
+                android:id="@+id/lntable4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 4"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn4"
+                    android:tag="btn4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table five -->
+
+            <LinearLayout
+                android:id="@+id/lntable5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 5"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn5"
+                    android:tag="btn5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- the row tow of tables -->
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- table six -->
+
+            <LinearLayout
+                android:id="@+id/lntable6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 6"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn6"
+                    android:tag="btn6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table seven -->
+
+            <LinearLayout
+                android:id="@+id/lntable7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 7"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn7"
+                    android:tag="btn7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table eight -->
+
+            <LinearLayout
+                android:id="@+id/lntable8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 8"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn8"
+                    android:tag="btn8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table night -->
+
+            <LinearLayout
+                android:id="@+id/lntable9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 9"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn9"
+                    android:tag="btn9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+
+            <!-- table ten -->
+
+            <LinearLayout
+                android:id="@+id/lntable10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 10"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn10"
+                    android:tag="btn10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- the row three of tables -->
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- table eleven -->
+
+            <LinearLayout
+                android:id="@+id/lntable11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable11"
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 11"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn11"
+                    android:tag="btn11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table 12 -->
+
+            <LinearLayout
+                android:id="@+id/lntable12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 12"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn12"
+                    android:tag="btn12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table 13 -->
+
+            <LinearLayout
+                android:id="@+id/lntable13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 13"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn13"
+                    android:tag="btn13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+            <!-- table 14 -->
+
+            <LinearLayout
+                android:id="@+id/lntable14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 14"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn14"
+                    android:tag="btn14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+
+            <!-- table 15 -->
+
+            <LinearLayout
+                android:id="@+id/lntable15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txttable15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BAN 15"
+                    android:textSize="30dip" />
+
+                <ImageView
+                    android:id="@+id/btn15"
+                    android:tag="btn15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table"
+                    android:onClick="selectTable" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

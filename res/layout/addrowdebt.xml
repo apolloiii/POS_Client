@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment_cost   :"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:imeActionId="1337"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:width="160sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RePayment date:"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <EditText
+            android:id="@+id/debt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:imeActionId="1337"
+            android:imeOptions="actionDone"
+            android:hint="2013-09-09"
+            android:inputType="text"
+            android:width="160sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/caculator" />
+    </LinearLayout>
+
+</LinearLayout>

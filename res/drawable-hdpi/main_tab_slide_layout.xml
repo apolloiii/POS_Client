@@ -1,0 +1,73 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:layout_gravity="center"
+    tools:context=".MainActivityCook" >
+
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:paddingTop="2dp" >
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingRight="2.0dip"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_addBind"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </TabWidget>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</TabHost>

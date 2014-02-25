@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reportitem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#fff"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/txtStt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="center"
+        android:text="STT"
+        android:textColor="#000"
+        android:textSize="10sp" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#D2B18F" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Ngay thang"
+        android:textColor="#000"
+        android:textSize="10sp" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#D2B18F" />
+
+    <TextView
+        android:id="@+id/txtTotalreport"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Tong hoa don"
+        android:textColor="#000"
+        android:textSize="10sp" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#D2B18F" />
+
+    <TextView
+        android:id="@+id/txtTotalValue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Tong gia tri"
+        android:textColor="#000"
+        android:textSize="10sp" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#D2B18F" />
+
+    <TextView
+        android:id="@+id/txtAverage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Trung binh"
+        android:textColor="#000"
+        android:textSize="10sp" />
+
+</LinearLayout>

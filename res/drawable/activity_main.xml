@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".PagingCategory" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/gvMonAn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#D3E2E8"
+            android:gravity="center"
+            android:horizontalSpacing="30dp"
+            android:numColumns="2"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="30dp" >
+        </GridView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="90"
+        android:background="#D3E2E8"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:gravity="left" >
+
+            <ImageView
+                android:id="@+id/btnLui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50" 
+            android:gravity="right">
+
+            <ImageView
+                android:id="@+id/btnTien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

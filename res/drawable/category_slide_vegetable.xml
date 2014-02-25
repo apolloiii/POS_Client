@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_demo1"
+    android:orientation="vertical"
+    tools:context=".GridViewMapFloor1" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnVegetSlideActivityFood"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#0095A7"
+                android:drawableLeft="@drawable/menu_food"
+                android:text="Food"
+                android:paddingLeft="15dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/btnVegetSlideActivityWine"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:background="#E48C0D"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/menu_wine"
+                android:text="Wine"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/btnVegetSlideActivityBeverages"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#96B123"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/menu_veget"
+                android:text="Vegettable"
+                android:textColor="#FFF" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/btnVegetSlideActivityOk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#0856BE"
+                    android:src="@drawable/selector_menuok3" />
+
+                <ImageButton
+                    android:id="@+id/btnVegetSlideActivityClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#9F00A6"
+                    android:src="@drawable/selector_footerdestroy1" />
+            </LinearLayout>
+        </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gridVegetableSliActivityItemSlide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="#6295CC"
+        android:gravity="center" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/gallery_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4.5"
+        android:background="#0856BE"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/left_arrow_imageview"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <Gallery
+            android:id="@+id/galleryCateVegetItemSliActivityItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spacing="30dip" />
+
+        <ImageView
+            android:id="@+id/right_arrow_imageview"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+    </LinearLayout>
+
+</LinearLayout>

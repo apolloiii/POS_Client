@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A6C8B"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/menuMap"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#0856BE"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/mapImgFloor1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center" >
+            
+             <ImageView
+                
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/floor" />
+
+            <TextView
+                android:id="@+id/txtfloor1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/floor1"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                android:textColor="#fff"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:id="@+id/mapImgFloor2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_weight="1"
+            android:gravity="center" >
+              <ImageView
+               
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/floor" />
+
+            <TextView
+                android:id="@+id/txtfloor2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/floor2"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:layout_marginTop="3dp"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+              android:id="@+id/mapImgFloor3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_weight="1"
+            android:gravity="center" >
+                <ImageView
+              
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/floor" />
+
+            <TextView
+                android:id="@+id/txtfloor3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/floor3"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:layout_marginTop="3dp"
+                android:textSize="10sp" />
+
+        
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:id="@+id/mapImgFloor4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_weight="1"
+            android:gravity="center" >
+               <ImageView
+               
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/floor" />
+
+            <TextView
+                android:id="@+id/txtfloor4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/floor4"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:textSize="10sp" />
+
+         
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fmapcontainer"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+        android:background="#6295CC"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

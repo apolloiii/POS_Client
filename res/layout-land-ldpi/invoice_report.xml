@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ngoc_menu_button_notradius"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="10dp" 
+ >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_weight="4"
+        android:orientation="horizontal" >
+
+        <TableLayout
+            android:layout_width="509dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/cost_bo_printf"
+            android:gravity="center"
+            android:paddingBottom="10dp" >
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:layout_weight="1"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/tvHoaDonUser"
+                    android:textColor="#000"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tvInvoiceReportCustomName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                      android:textSize="10sp"
+                    android:text="Phan Duy Dương"
+                    android:textColor="#000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/tvHoaDonDiaChi"
+                    android:textColor="#000"
+                      android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvInvoiceReportCustomAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                      android:textSize="10sp"
+                      android:layout_marginLeft="5dp"
+                    android:text="54 Hạ Đình"
+                    android:textColor="#000" />
+            </TableRow>
+
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:background="@drawable/ngoc_menu_button_notradius"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnInvoiceReportPrint"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="@string/payment"
+                android:padding="5dp"
+                android:textColor="#fff"
+                android:background="@drawable/ngoc_header_button"
+                android:layout_weight="1"
+                 />
+
+              <Button
+                android:id="@+id/btnno22"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:padding="5dp"
+                android:text="@string/debit"
+                android:background="@drawable/ngoc_header_button" />
+
+
+            <Button
+                android:id="@+id/btnInvoiceReportCancel"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:textColor="#fff"
+                android:background="@drawable/ngoc_header_button"
+                android:text="@string/Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tvHoaDonTitle"
+            android:textColor="@android:color/white"
+              android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/index"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/Index"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@drawable/ngoc_menu_button_notradius"
+                android:textColor="@android:color/background_dark" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/nameitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/namefood"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@drawable/ngoc_menu_button_notradius"
+                android:textColor="@android:color/background_dark" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2" >
+
+                <TextView
+                    android:id="@+id/unit_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/amount1"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@color/background_1"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@drawable/ngoc_menu_button_notradius"
+                android:textColor="@android:color/background_dark" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2" >
+
+                <TextView
+                    android:id="@+id/cost_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/cost"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@drawable/ngoc_menu_button_notradius"
+                android:textColor="@android:color/background_dark" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2" >
+
+                <TextView
+                    android:id="@+id/note_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/Total"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_weight="19"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/lvPrintInvoiceReport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/line" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:ems="10"
+                android:gravity="left"
+                android:maxLines="1"
+                android:paddingLeft="10.0dip"
+                android:text="@string/currency1"
+                android:textColor="#fff"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spPrintInvoice"
+                android:layout_width="77dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ngoc_header_button"
+                android:ems="10"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cost_bo_printf"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ngoc_header_button" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/costtable"
+                    android:textColor="#fff"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:textSize="10sp"
+                    android:paddingRight="20.0dip"
+                    android:text="@string/inv_vat"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvInvoiceReportVAT"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="10.0dip"
+                    android:text="30"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingRight="5dip"
+                    android:text="@string/inv_commition"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvInvoiceReportCommition"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="10.0dip"
+                    android:text="20"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingRight="20.0dip"
+                    android:text="@string/Total"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvInvoiceReportTotal"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:paddingLeft="10.0dip"
+                    android:text="0"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

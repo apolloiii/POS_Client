@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="wslogin">http://192.168.1.228:8090/POS/wspos/wslogin.php</string>
+    <string name="wsgetcategrory">http://192.168.1.228:8090/POS/wspos/wsgetallcategories.php</string>
+    <string name="wsgetitems">http://192.168.1.228:8090/POS/wspos/wsgetallitems.php</string>
+    <string name="UploadAuDio">http://192.168.1.228:8090/POS/wspos/upload_audio.php</string>
+    <string name="UploadImage">http://192.168.1.228:8090/POS/wspos/upload_image.php</string>
+    <string name="URLdownloading">http://192.168.1.228:8090/POS/wspos/media/</string>
+    <string name="Search_categrory_Items">http://192.168.1.228:8090/POS/wspos/wssearchgetallcategoryitems.php</string>
+    <string name="Search_categrory">http://192.168.1.228:8090/POS/wspos/wssearchgetallcategory.php</string>
+    <string name="Get_categrory_Items">http://192.168.1.228:8090/POS/wspos/wsgetallitems.php</string>
+    <string name="Get_categrory">http://192.168.1.228:8090/POS/wspos/wsgetallcategories.php</string>
+    <string name="Get_Invoice_Item">http://192.168.1.228:8090/POS/wspos/wsgetallinvoiceitems.php</string>
+    <string name="Insert_Invoice">http://192.168.1.228:8090/POS/wspos/wsaddnewinvoice.php</string>
+    <string name="Insert_Invoice_Item">http://192.168.1.228:8090/POS/wspos/wsaddnewinvoicedetail.php</string>
+    <string name="CheckItableFocus">http://192.168.1.228:8090/POS/wspos/wscheckitablefocus.php</string>
+    <string name="WsFloor1">http://192.168.1.228:8090/POS/wspos/map/main/floor1.php?android_id=</string>
+    <string name="WsFloor2">http://192.168.1.228:8090/POS/wspos/map/main/floor2.php?android_id=</string>
+    <string name="WsFloor3">http://192.168.1.228:8090/POS/wspos/map/main/floor3.php?android_id=</string>
+    <string name="Get_InvoiceCount">http://192.168.1.228:8090/POS/wspos/wsgetallinvoicecount.php</string>
+    <string name="Get_CategoriesCount">http://192.168.1.228:8090/POS/wspos/wsgetallcategoriescount.php</string>
+    <string name="Get_ItemCount">http://192.168.1.228:8090/POS/wspos/wsgetallitemscount.php</string>
+    <string name="UpdateItable">http://192.168.1.228:8090/POS/wspos/wsupdateitable.php</string>
+    <string name="CheckVisibleInvoice">http://192.168.1.228:8090/POS/wspos/wsvisibleinvoice.php</string>
+   
+    <string name="UpdateInvoice">http://192.168.1.228:8090/POS/wspos/wsupdateinvoice.php</string>
+    <string name="DeleteInvoice_Detail">http://192.168.1.228:8090/POS/wspos/wsdeleteinvoice_detail.php</string>
+    <string name="urlpayment">http://192.168.1.228:8090/POS/wspos/wspayment.php</string>
+    <string name="wstableselect">http://192.168.1.228:8090/POS/wspos/wstableselect.php</string>
+    <string name="wsupdatepostable">http://192.168.1.228:8090/POS/wspos/wsupdatepostable.php</string>
+   <!--  make bean data -->
+    <string name="wsgetalluser">http://192.168.1.228:8090/POS/wspos/wsgetalluser.php</string>
+    <string name="wsgetallitable">http://192.168.1.228:8090/POS/wspos/wsgetallitable.php</string>
+    <string name="wsgetallinvoice">http://192.168.1.228:8090/POS/wspos/wsgetallinvoice.php</string>
+    <string name="wsgetallcategories">http://192.168.1.228:8090/POS/wspos/wsgetallcategories.php</string>
+    <string name="wsgetallitems">http://192.168.1.228:8090/POS/wspos/wsgetallitems.php</string>
+    <string name="wsgetallinvdetail">http://192.168.1.228:8090/POS/wspos/wsgetallinvdetail.php</string> 
+
+</resources>

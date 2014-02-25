@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ngoc_header_button"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imbItabManagerClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_click"
+            android:src="@drawable/selector_menu_cancel2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/titleItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Itable Manager"
+                android:textColor="#FFF"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnItableManagerEditUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_click"
+            android:text="Edit"
+            android:textColor="#FFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#567432" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:background="@drawable/ngoc_menu_button_notradius"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table name"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="35"
+            android:background="@drawable/ngoc_menu_button_notradius"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="10"
+            android:background="@drawable/ngoc_menu_button_notradius"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="locate"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="10"
+            android:background="@drawable/ngoc_menu_button_notradius"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="15"
+            android:background="@drawable/ngoc_menu_button_notradius"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/lvItableManagerItable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+        <ImageButton
+            android:id="@+id/imbItableManagerAddItable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:background="@drawable/button_click"
+            android:src="@drawable/selector_footer_addt2" />
+    </LinearLayout>
+
+</LinearLayout>

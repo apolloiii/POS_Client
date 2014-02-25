@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/iii/pos/client/activity/MainKitchenActivity.java=UTF-8
+encoding//src/iii/pos/client/activity/MainPosActivity.java=UTF-8
+encoding//src/iii/pos/client/adapter/ConfirmAdapter.java=UTF-8
+encoding//src/iii/pos/client/adapter/CookAdapter.java=UTF-8
+encoding//src/iii/pos/client/adapter/InvoiceDetailAdapter.java=UTF-8
+encoding//src/iii/pos/client/adapter/ItableManagerAdapter.java=UTF-8
+encoding//src/iii/pos/client/adapter/ListInvoiceAdapter.java=UTF-8
+encoding//src/iii/pos/client/fragment/InvoiceDetailPosFragment.java=UTF-8
+encoding//src/iii/pos/client/fragment/InvoicePosFragment.java=UTF-8
+encoding/<project>=UTF-8

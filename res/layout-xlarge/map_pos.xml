@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ngoc_menu_button"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+<!-- 
+    <LinearLayout
+        android:id="@+id/menuMap"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnAddFloor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ngoc_header_button"
+            android:text="@string/addfloor"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/lvFloor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#fff"
+            android:dividerHeight="0.5dip"
+            android:layout_weight="1" >
+        </ListView>
+    </LinearLayout>
+-->
+    <LinearLayout
+        android:id="@+id/fmapcontainer"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+     android:background="@drawable/mapfloor1"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

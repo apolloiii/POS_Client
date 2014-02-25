@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6295CC"
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="45"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/titleItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên Món Ăn"
+                android:textSize="15sp"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imgpvClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_click"
+            android:src="@drawable/selector_menu_cancel2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#567432" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:orientation="vertical"
+       >
+
+        <ListView
+            android:id="@+id/lvpvSP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="45" >
+
+        <ImageButton
+            android:id="@+id/imgpvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:background="@drawable/button_click"
+            android:visibility="gone"
+            android:src="@drawable/selector_footer_addt2" />
+    </FrameLayout>
+
+</LinearLayout>
