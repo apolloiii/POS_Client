@@ -3,7 +3,6 @@ package iii.pos.client.activity;
 import iii.pos.client.R;
 import iii.pos.client.adapter.CategorySlideWineAdapter;
 import iii.pos.client.adapter.WineViewPagerAdapter;
-import iii.pos.client.data.ConfigurationDB;
 import iii.pos.client.model.Category;
 import iii.pos.client.model.Items;
 import iii.pos.client.server.ConfigurationServer;
@@ -41,7 +40,7 @@ public class WineSlideActivity extends FragmentActivity implements
 	private ViewPager gridWineSliActivityItemSlide;
 	private WineViewPagerAdapter adapterWine;
 	private ArrayList<Items> listItem;
-	private ConfigurationDB mDB;
+	//private ConfigurationDB mDB;
 	private String inv_code;
 	private Context mContext;
 	private int category_id = 22;
@@ -57,7 +56,7 @@ public class WineSlideActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_win_slide_activity);
-		mDB = new ConfigurationDB(WineSlideActivity.this);
+		//mDB = new ConfigurationDB(WineSlideActivity.this);
 		this.mContext = WineSlideActivity.this;
 		init();
 		// ==========-get code_table, inv_code from preview activity=======//

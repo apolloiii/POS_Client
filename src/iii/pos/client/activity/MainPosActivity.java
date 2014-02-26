@@ -5,7 +5,6 @@ import iii.pos.client.activity.base.FragmentActivityBase;
 import iii.pos.client.activity.helper.MainPosActivityHelper;
 import iii.pos.client.activity.helper.MainPosActivityHelper.OnListenerLogInOrOut;
 import iii.pos.client.data.Constaints;
-import iii.pos.client.data.UserDB;
 import iii.pos.client.fragment.HeaderPosFragment;
 import iii.pos.client.fragment.InvoiceDetailPosFragment;
 import iii.pos.client.fragment.InvoiceDetailPosFragment.IAddMenu;
@@ -59,7 +58,7 @@ public class MainPosActivity extends FragmentActivityBase
 
 	//private MyShareprefer myShare;
 	//private ConfigurationDB mDB;
-	private UserDB userDB;
+	//private UserDB userDB;
 
 	private ConfigurationWS mWS;
 	private Fragment myBodyFragemnt = null;
@@ -68,7 +67,7 @@ public class MainPosActivity extends FragmentActivityBase
 	private MainPosActivityHelper posActivityHelper;
 	public static String username;
 	public static String pass;
-	public static long phoneNumber;
+	public static String phoneNumber = "-1";
 	
 	private String TAG = "";
  
@@ -88,7 +87,7 @@ public class MainPosActivity extends FragmentActivityBase
 		
 		//mDB = new ConfigurationDB(getApplicationContext());
 		//mDB.OpenDB();
-		userDB = new UserDB(this);
+		//userDB = new UserDB(this);
 
 		beanDataAll = new BeanDataAll(MainPosActivity.this);
 		beanInvDetailTmpl = new BeanInvDetailTmpl();
@@ -111,7 +110,7 @@ public class MainPosActivity extends FragmentActivityBase
 		if (ConfigurationServer.body != 0)
 			//loadActivtyChild();
 		
-		posActivityHelper = new MainPosActivityHelper(this, mWS, userDB, user);
+		posActivityHelper = new MainPosActivityHelper(this, mWS,user);
 		
 		Bundle extras = getIntent().getExtras();
 		if (extras == null) {

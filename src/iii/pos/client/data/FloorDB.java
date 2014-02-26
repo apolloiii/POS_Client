@@ -1,4 +1,4 @@
-package iii.pos.client.data;
+/*package iii.pos.client.data;
 
 import iii.pos.client.model.Floor;
 
@@ -69,3 +69,4 @@ public class FloorDB extends ConfigDB {
 		return false;
 	}
 }
+*/

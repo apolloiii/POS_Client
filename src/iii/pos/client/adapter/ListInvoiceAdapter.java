@@ -128,7 +128,7 @@ public class ListInvoiceAdapter extends ArrayAdapter<Invoice> {
 						}
 					});  //no comment// ssss
 			holder.cbCheckbox.setChecked(lstInv.get(position).isCheck());
-			if (inv.getUser_id() != MainPosActivity.user_id) {
+			if (inv.getUser_id() !=  MainPosActivity.user_id ) {
 				holder.cbCheckbox.setEnabled(true);
 			}   
 			if (inv != null) {
@@ -247,13 +247,13 @@ public class ListInvoiceAdapter extends ArrayAdapter<Invoice> {
 	}
 	
 	private void chooseTable(final ArrayList<String> data) {
-		createDialog(data);
+		//createDialog(data);
 	}
 	
 	/**
 	 * @param lstString : Danh sách các bàn trống cho phép người dùng chọn
 	 */
-	private void createDialog(ArrayList<String> lstString) {
+	/*private void createDialog(ArrayList<String> lstString) {
 		for (String str : lstString) {
 			Log.d("___Danh sách bàn trống hiển thị lên Dialog choose table:", str);
 		}
@@ -331,5 +331,5 @@ public class ListInvoiceAdapter extends ArrayAdapter<Invoice> {
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 }

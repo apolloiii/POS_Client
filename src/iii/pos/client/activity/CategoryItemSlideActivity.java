@@ -2,7 +2,6 @@ package iii.pos.client.activity;
 
 import iii.pos.client.R;
 import iii.pos.client.adapter.CategorySlideAdapter;
-import iii.pos.client.data.ConfigurationDB;
 import iii.pos.client.library.FormatFloorTableName;
 import iii.pos.client.library.GetDeviceInfo;
 import iii.pos.client.menu.AdapterViewPager;
@@ -65,7 +64,7 @@ public class CategoryItemSlideActivity extends FragmentActivity implements
 	private int category_id = 1;
 	// ---------------------------
 
-	private ConfigurationDB mDB;
+	//private ConfigurationDB mDB;
 
 	// ----------initialize view---------------------//
 	@Override
@@ -86,7 +85,7 @@ public class CategoryItemSlideActivity extends FragmentActivity implements
 			Toast.makeText(getApplicationContext(), "Get Intent " + inv_code, Toast.LENGTH_LONG) .show();
 		}
 
-		mDB = new ConfigurationDB(context);
+		//mDB = new ConfigurationDB(context);
 
 		gridCateItemSliActivityItem = (ViewPager) findViewById(R.id.viewPagerCateItemSliActivityItem);
 		btnCateItemSliActivityClose = (ImageButton) findViewById(R.id.btnCateItemSliActivityClose);
@@ -227,14 +226,14 @@ public class CategoryItemSlideActivity extends FragmentActivity implements
 
 	// ------------ get category from bean-------------//
 	private void getDrawablesList() {
-		mDB.OpenDB(); //
+		///mDB.OpenDB(); //
 		categoryNext = MainPosActivity.beanDataAll.getCategoryByParent(1);// 1--food
 		for (int i = 0; i < categoryNext.size(); i++) {
 			categoryCurren.add(categoryNext.get(i));
 		}
 		Log.d("Cate:", "  " + categoryNext.size());
 		galImageAdapter.notifyDataSetChanged();
-		mDB.closeDB();
+		//mDB.closeDB();
 	}
 
 	// ---------action next, back page-------//

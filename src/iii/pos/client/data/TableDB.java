@@ -1,4 +1,4 @@
-package iii.pos.client.data;
+/*package iii.pos.client.data;
 
 import iii.pos.client.model.Itable;
 import android.content.ContentValues;
@@ -17,7 +17,7 @@ public class TableDB extends ConfigDB {
 		SQLiteDatabase db = this.getWritableDatabase();
 		if(checkExist(table)){
 		ContentValues values = new ContentValues();
-/*		values.put(Itable_floor, table.getFloor());
+		values.put(Itable_floor, table.getFloor());
 		values.put(Itable_code_table, table.getCode_table());
 		values.put(Itable_status, table.getStatus());
 		values.put(Itable_description_table, table.getDescription_table());
@@ -25,7 +25,7 @@ public class TableDB extends ConfigDB {
 		values.put(Itable_pos_y, table.getPos_y());
 		values.put(Itable_flag, table.getFlag());
 		values.put(Itable_create_time, "2013-09-09");
-		values.put(Itable_update_time, "2013-09-09");*/
+		values.put(Itable_update_time, "2013-09-09");
 		// Inserting Row
 		db.insert(TABLE_NAME, null, values);
 		 // Closing database connection
@@ -46,3 +46,4 @@ public class TableDB extends ConfigDB {
 
 
 }
+*/

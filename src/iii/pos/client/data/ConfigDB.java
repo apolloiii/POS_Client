@@ -1,4 +1,4 @@
-package iii.pos.client.data;
+/*package iii.pos.client.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -110,3 +110,4 @@ public class ConfigDB extends SQLiteOpenHelper {
 	}
 
 }
+*/

@@ -3,7 +3,6 @@ package iii.pos.client.fragment;
 import iii.pos.client.R;
 import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.adapter.InvoiceDetailAdapter;
-import iii.pos.client.data.ConfigurationDB;
 import iii.pos.client.library.FormatFloorTableName;
 import iii.pos.client.model.Invoice_Detail;
 import iii.pos.client.server.ConfigurationServer;
@@ -65,7 +64,7 @@ public class InvoiceDetailPosFragment extends Fragment {
 	private int commitiontmp;
 	private boolean status = false;
 
-	private ConfigurationDB mDB;
+	//private ConfigurationDB mDB;
 	private IAddMenu iaddMenu;
 	private Context context;
 
@@ -114,7 +113,7 @@ public class InvoiceDetailPosFragment extends Fragment {
 			Bundle savedInstanceState) {
 		final View invoiceLayout = inflater.inflate(R.layout.invoice_detail_activiy, container, false);
 		// -----------------------------------------------//
-		mDB = new ConfigurationDB(context);
+		//mDB = new ConfigurationDB(context);
 		// ---------Event Add-----------------//
 		btnAddInvDetail = (ImageView) invoiceLayout.findViewById(R.id.btnAddInvDetail);
 		btnAddnewSearch = (ImageView) invoiceLayout.findViewById(R.id.btnAddnewSearch);

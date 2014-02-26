@@ -1,4 +1,4 @@
-package iii.pos.client.data;
+/*package iii.pos.client.data;
 
 import iii.pos.client.R;
 import iii.pos.client.model.Category;
@@ -1112,16 +1112,16 @@ public class ConfigurationDB {
 		String SQL_Update_Invoice = "update invoice set [status] = '0', [user_id] = '0', [inv_endtime] = '"
 				+ endtime + "' WHERE inv_code = '" + inv_code + "'";
 
-		/*-----------------hien tai chua co itable nen rao tam lai xu ly sau*/
+		-----------------hien tai chua co itable nen rao tam lai xu ly sau
 		String SQL_Update_Itable = "update itable set status = 0, flag=0 where code_table = '"
 				+ table_code + "' ";
 
 		mDB.rawQuery(SQL_Update_Invoice, null);
-		/* mDB.rawQuery(SQL_Update_Itable, null); */
+		 mDB.rawQuery(SQL_Update_Itable, null); 
 
 	}
 
-	/*--Update status and user_id in table invoice--*/
+	--Update status and user_id in table invoice--
 	public long Update(String inv_code) {
 		ContentValues values = new ContentValues();
 		values.put("user_id", 0);
@@ -1184,3 +1184,4 @@ public class ConfigurationDB {
 	}
 
 }
+*/

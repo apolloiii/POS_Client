@@ -4,9 +4,8 @@ import iii.pos.client.R;
 import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.adapter.SpinnerAdapterTable;
 import iii.pos.client.data.Constaints;
-import iii.pos.client.data.UserDB;
 import iii.pos.client.fragment.InvoiceDetailPosFragment.IAddMenu;
-import iii.pos.client.library.GetCurrentLocationGPS;
+import iii.pos.client.library.CheckValidate;
 import iii.pos.client.library.GetDeviceInfo;
 import iii.pos.client.model.Floor;
 import iii.pos.client.model.Itable;
@@ -59,7 +58,7 @@ public class MainPosActivityHelper {
 	private ConfigurationWS mWS;
 	//private MyShareprefer myShare;
 	//private ConfigurationDB mDB;
-	private UserDB userDB;
+	//private UserDB userDB;
 	private int user_id = 0;
 	private User user;
 	//private String user_title = "";
@@ -67,11 +66,11 @@ public class MainPosActivityHelper {
 	//private ISelectItable iSelectItable;
 	private IAddMenu iAddMenu ;
 	
-	public MainPosActivityHelper(Context mContext, ConfigurationWS mWS, UserDB userDB, User user){
+	public MainPosActivityHelper(Context mContext, ConfigurationWS mWS, User user){
 		this.mContext = mContext;
 		this.mWS = mWS;
 	//	this.myShare = myShare;
-		this.userDB = userDB;
+		//this.userDB = userDB;
 		this.user = user;
 		//this.iSelectItable = (ISelectItable) mContext;
 		this.iAddMenu = (IAddMenu) mContext;
@@ -144,10 +143,19 @@ public class MainPosActivityHelper {
 					MainPosActivity.username = sGuestName;
 				}
 				if( TextUtils.isEmpty( sGuestPhoneNumber ) ){
-					MainPosActivity.phoneNumber = 0 ;
+					Toast.makeText(mContext, "Please input phone number !", Toast.LENGTH_SHORT).show();
+					return;
+					//MainPosActivity.phoneNumber = 0 ;
 				}else{
-					MainPosActivity.phoneNumber = Long.parseLong( sGuestPhoneNumber );
+					boolean check = new CheckValidate().isPhoneValidate(sGuestPhoneNumber);
+					if( check == true ){
+						MainPosActivity.phoneNumber = sGuestPhoneNumber ;
+					}else{
+						Toast.makeText(mContext, "Phone number format wrong !", Toast.LENGTH_SHORT).show();
+						return;
+					}
 				}
+				
 				// Kiểm tra thông tin chọn bàn
 				if( codeTable.contains("free") ){
 					Toast.makeText(mContext, "Floor is not free table !", Toast.LENGTH_SHORT).show();
@@ -156,17 +164,20 @@ public class MainPosActivityHelper {
 				
 				/**
 				 * Các bước cần làm khi Guest tạo mới invoice:
-				 * (xong)B1: Nhập thông tin : Tên + SĐT
+				 * 
+				 * (xong)B1: Nhập thông tin : Tên hoặc SĐT
 				 * (xong)B2: Chọn Tầng + bàn 
-				 * (xong)B3: Insert invoice mới vào bảng pos_invoice với status = 4 ( Chỉ dành cho khách )
+				 * (xong)B3: Tạo mới invoice và Insert invoice mới vào bảng pos_invoice với status = 4 ( Chỉ dành cho khách )
 				 * (xong)B4: Update bàn đổi trạng thái = 2 ( Đang sử dụng )
 				 * (xong)B5: Hiển thị màn hình chọn món ăn
 				 * (xong)B6: Sau khi chọn món ăn xong insert DL vào bảng pos_invoice_detail
-				 * B7: Hiển thị invoice trên màn hình invoice pos
-				 * B8: Waiter sẽ nhận thấy invoice mới của khách và sẽ tới xác nhận
+				 * (xong)B7: Hiển thị invoice của Guest trên màn hình invoice pos (ví dụ: Guest HD Bàn (1) Tầng 1 )
+				 * (xong)B8: Tạo thêm nút nhấn xác nhận cho những hóa đơn Guest, cho phép Waiter xác nhận 
+				 * B9: Waiter sẽ nhận thấy invoice mới của khách và sẽ tới xác nhận
 				 * 	   Khi waiter xác nhận :
-				 * 			+ Đổi trạng thái bảng pos_invoice với status = 2 ( Đang sử dụng )
-				 * 			+ Đổi lại tên hóa đơn : G_TenNV_.....
+				 * 			+ Đổi trạng thái bảng pos_invoice với status = 3 ( Đang sử dụng )
+				 * 			+ Đổi lại tên hóa đơn của Guest này.( Ví dụ: G_TenNV_.....)
+				 * B10: Sau khi thanh toán hóa đơn của Guest: Hủy hóa đơn 
 				 */
 				
 				//Server
@@ -183,9 +194,9 @@ public class MainPosActivityHelper {
 								ArrayList<String> lstCodeTable = new ArrayList<String>();
 								lstCodeTable.add(codeTable);
 								
-								new WSAddNewInvoice(mContext, invCode, 4, (int)MainPosActivity.phoneNumber, "", 0).execute();
-								new WSAddInvTable(mContext, invCode, (int)MainPosActivity.phoneNumber, lstCodeTable).execute();
-								new WSUpdateItableStatus(mContext, 2, (int)MainPosActivity.phoneNumber, lstCodeTable).execute();
+								new WSAddNewInvoice(mContext, invCode, 4, MainPosActivity.user_id, "", 0).execute();
+								new WSAddInvTable(mContext, invCode, MainPosActivity.user_id, lstCodeTable).execute();
+								new WSUpdateItableStatus(mContext, 2, MainPosActivity.phoneNumber, lstCodeTable).execute();
 								
 								/*
 								-------------------add invoice to bean---------------------
@@ -284,7 +295,7 @@ public class MainPosActivityHelper {
 						user.setPassword(pass);
 						Log.e(">>>>>>>>>>>>>>>> title = ", "" + element.getString("title"));
 						user.setTitle(element.getString("title"));
-						userDB.addUser(user);
+						//userDB.addUser(user);
 						/*myShare.setUser_id(user_id);
 						myShare.setUserItem(username);
 						myShare.setPassWordItem(pass);*/

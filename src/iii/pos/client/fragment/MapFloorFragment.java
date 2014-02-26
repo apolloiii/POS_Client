@@ -326,7 +326,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 			// click to start dragging. //
 
 			String code_table = v.getTag().toString();
-			new WSClickTable(getActivity(), code_table, MainPosActivity.user_id)
+			new WSClickTable(getActivity(), code_table,  MainPosActivity.user_id )
 					.execute();
 		}
 
@@ -410,7 +410,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 		// ============view invoice========================//
 		case 0:
 			iSelectItable.onSelectItable(2, 2, code_table_t,
-					MainPosActivity.user_id);
+					 MainPosActivity.user_id );
 			// da su
 			// dung
 			// Toast.makeText(getActivity(), "View invoice", Toast.LENGTH_SHORT)
@@ -469,7 +469,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 										int which) {
 									try {
 
-										int user_id = MainPosActivity.user_id;
+										int user_id =MainPosActivity.user_id;
 										new WSGetInvCodeByItable(getActivity(),
 												table_code_g, code_table_t,
 												user_id).execute();

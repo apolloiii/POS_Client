@@ -5,19 +5,19 @@ import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.activity.helper.MainKitchenActivityHelper;
 import iii.pos.client.adapter.ListInvoiceAdapter;
 import iii.pos.client.adapter.ListInvoiceAdapter.IGetInvCode;
-import iii.pos.client.data.InvoiceDB;
 import iii.pos.client.fragment.InvoiceDetailPosFragment.IAddMenu;
 import iii.pos.client.fragment.base.FragmentBase;
 import iii.pos.client.model.Invoice;
 import iii.pos.client.model.Invoice_Detail;
 import iii.pos.client.model.Voice;
-import iii.pos.client.server.BeanDataAll;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
+import iii.pos.client.wsclass.WSGetInvoiceClientById;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutionException;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -29,6 +29,8 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,12 +46,12 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 
 	public static final String CALCULATOR_PACKAGE = "com.android.calculator2";
 	public static final String CALCULATOR_CLASS = "com.android.calculator2.Calculator";
-	public InvoiceDB invoiceDB;
+	//public InvoiceDB invoiceDB;
 	//private ArrayList<Invoice> listInvDb;
 	private int status = 0;
 	private String table_code;
 	private int user_id;
-	//private boolean ok = false;
+	private boolean ok = false;
 	private IAddMenu iaddMenu;
 	private IAddFragment addf;
 	//private ConfigurationDB mDB;
@@ -141,15 +143,16 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 
 		//mDB.OpenDB();
 		listInvoiceCurrent = new CopyOnWriteArrayList<Invoice>();
-		//listInvTmp = new CopyOnWriteArrayList<Invoice>();
+		listInvTmp = new CopyOnWriteArrayList<Invoice>();
 		//listInvoiceCurrent = MainPosActivity.beanDataAll.lstInvoice;
 		//displaydata(listInvoiceCurrent);
-		listInvoiceCurrent = BeanDataAll.getLstInvoiceMoke();
-		displaydata(listInvoiceCurrent);
+		
+		/*listInvoiceCurrent = BeanDataAll.getLstInvoiceMoke();
+		displaydata(listInvoiceCurrent);*/
 		
 		
-		//ok = true;
-		//new Thread(myThread).start();
+		/*ok = true;
+		new Thread(myThread).start();*/
 		
 		/*btnCalculator = (Button) v.findViewById(R.id.btnCalculator);
 		btnCalculator.setOnClickListener(this);
@@ -170,7 +173,29 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 		
 	}
 
+	@Override
+	public void onResume() {
+		super.onResume();
+		Toast.makeText(getActivity(), "On Resume", Toast.LENGTH_LONG).show();
+		try {
+			listInvoiceCurrent = new WSGetInvoiceClientById(getActivity()).execute().get();
+			displaydata(listInvoiceCurrent);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+		//ok = true;
+		//new Thread(myThread).start();
+	}
 	
+	@Override
+	public void onPause() {
+		super.onPause();
+		//ok = false;
+		Toast.makeText(getActivity(), "On pause", Toast.LENGTH_LONG).show();
+		
+	}
 	
 	public void setData() {
 		invoiceList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -212,7 +237,7 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 							
 							// -------checking status of invoice--------//
 							int flag = 0;
-							if (status == 0 || other_user != MainPosActivity.user_id) 
+							if (status == 0 || other_user !=  MainPosActivity.user_id ) 
 							{
 								flag = 0;
 								if (new ConfigurationServer(context).isOnline()) {
@@ -290,24 +315,26 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 	/**
 	 * Thread chạy luôn luôn lấy DL từ server về và hiển thị lên listview
 	 */
-	/*private Runnable myThread = new Runnable() {
+	private Runnable myThread = new Runnable() {
 
 		@Override
 		public void run() {
 			while (ok) {
 				try {
-					if (new ConfigurationServer(getActivity().getBaseContext())
-							.isOnline()) {
+					Thread.sleep(5000);
+					if (new ConfigurationServer(getActivity().getBaseContext()) .isOnline()) {
 						listInvTmp.clear();
 						MainPosActivity.beanDataAll.makeDataInvoice();
 						listInvTmp = MainPosActivity.beanDataAll.lstInvoice;
-						for (Invoice invoice : listInvTmp) {
+						
+						//listInvTmp = new WSGetInvoiceClientById(getActivity()).execute( (int) MainPosActivity.phoneNumber).get();
+						/*for (Invoice invoice : listInvTmp) {
 							invoiceDB.insertInvoice(invoice);
-						}
+						}*/
 						// ========set check true again in lst to display ====//
 						
-						 * for (Invoice invoice : listInvTmp) {
-						 * invoiceDB.insertInvoice(invoice); }
+						  /*for (Invoice invoice : listInvTmp) {
+						  invoiceDB.insertInvoice(invoice); }*/
 						 
 						// listInvDb = invoiceDB.getallInvoice();
 						for (Invoice inv : listInvTmp) {
@@ -315,7 +342,7 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 								inv.setCheck(true);
 							}
 						}
-					} else {
+					} /*else {
 						listInvTmp.clear();
 						listInvTmp = invoiceDB.getallInvoice();
 						for (Invoice inv : listInvTmp) {
@@ -324,10 +351,10 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 							}
 						}
 						//Log.e("dohai", "invoice ko comang");
-					}
+					}*/
 					// ===========update screen=====================//
 					handler.sendMessage(handler.obtainMessage());
-					Thread.sleep(2000);
+					Thread.sleep(5000);
 					//Log.e("dohai", "invoice comang");
 
 				} catch (Exception e) {
@@ -344,10 +371,10 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 			};
 		};
 
-	};*/
+	};
 
 	// =========================update from Handler===========================//
-	/*private synchronized void notifyDataSetChanged(final List<Invoice> arr) {
+	private synchronized void notifyDataSetChanged(final List<Invoice> arr) {
 		try {
 			getActivity().runOnUiThread(new Runnable() {
 				public void run() {
@@ -363,7 +390,7 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 		} catch (Exception e) {
 
 		}
-	}*/
+	}
 
 	private void viewInvoice(String table_code) {
 		// b1: get invoice the same with table_code

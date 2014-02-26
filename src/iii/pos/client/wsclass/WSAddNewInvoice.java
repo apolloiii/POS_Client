@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -65,7 +66,7 @@ public class WSAddNewInvoice extends AsyncTask<Void, Void, Void> {
 			JSONObject json = new JSONObject();
 			json.put("inv_code", inv_code);
 			json.put("status", status);
-			json.put("user_id", user_id);
+			json.put("user_id", MainPosActivity.phoneNumber);
 			json.put("inv_type", inv_type);
 			json.put("parent_inv", parent_inv);
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLAddNewInvoice, json, "posts");

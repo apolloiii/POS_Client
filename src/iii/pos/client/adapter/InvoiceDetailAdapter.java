@@ -2,7 +2,6 @@ package iii.pos.client.adapter;
 
 import iii.pos.client.R;
 import iii.pos.client.activity.MainPosActivity;
-import iii.pos.client.data.ConfigurationDB;
 import iii.pos.client.fragment.InvoiceDetailPosFragment;
 import iii.pos.client.model.Invoice_Detail;
 import iii.pos.client.server.ConfigurationServer;
@@ -55,7 +54,7 @@ public class InvoiceDetailAdapter extends ArrayAdapter<Invoice_Detail>{
 	private boolean status = false;
 	private InvoiceDetailPosFragment myActivity;
 	private ConfigurationWS mWS;
-	private ConfigurationDB mDB;
+	//private ConfigurationDB mDB;
 	private ImageLoader imageLoader;
 	private ConfirmAdapter adapterConfirm;
 	private ListView lvConfirm;
@@ -96,7 +95,7 @@ public class InvoiceDetailAdapter extends ArrayAdapter<Invoice_Detail>{
 			
 			final Invoice_Detail invoicedetail = lstInvDetail.get(position);
 			mWS = new ConfigurationWS(context);
-			mDB = new ConfigurationDB(context);
+			//mDB = new ConfigurationDB(context);
 			/*if (this.status) {
 			}else{
 				holder.imgSoundAdd.setEnabled(this.status);
@@ -292,9 +291,9 @@ public class InvoiceDetailAdapter extends ArrayAdapter<Invoice_Detail>{
 
 	// ==========delINVDetail in SQLite======================//
 	private void delInvDetail(String inv_code, int item_id) {
-		mDB.OpenDB();
+		/*mDB.OpenDB();
 		mDB.delete_item_invoice_detail(inv_code, item_id);
-		mDB.closeDB();
+		mDB.closeDB();*/
 	}
 
 	// ==========update item=================================//

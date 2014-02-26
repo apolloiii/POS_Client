@@ -1,4 +1,4 @@
-package iii.pos.client.data;
+/*package iii.pos.client.data;
 
 import java.util.ArrayList;
 
@@ -92,3 +92,4 @@ public class UserDB extends ConfigDB {
 		return user;
 	}
 }
+*/

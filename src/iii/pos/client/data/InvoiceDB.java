@@ -1,4 +1,4 @@
-package iii.pos.client.data;
+/*package iii.pos.client.data;
 
 import iii.pos.client.model.Invoice;
 
@@ -91,3 +91,4 @@ public class InvoiceDB extends ConfigDB {
 	}
 
 }
+*/

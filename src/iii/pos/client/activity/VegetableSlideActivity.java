@@ -3,7 +3,6 @@ package iii.pos.client.activity;
 import iii.pos.client.R;
 import iii.pos.client.adapter.CategorySlideAdapter;
 import iii.pos.client.adapter.VegetViewPagerAdapter;
-import iii.pos.client.data.ConfigurationDB;
 import iii.pos.client.model.Category;
 import iii.pos.client.model.Items;
 import iii.pos.client.server.ConfigurationServer;
@@ -39,7 +38,7 @@ public class VegetableSlideActivity extends FragmentActivity implements
 	private ViewPager viewPageVegetSliActivityItemSlide;
 	private VegetViewPagerAdapter adapterveget;
 	private ArrayList<Items> lstVegetItem;
-	private ConfigurationDB mDB;
+	//private ConfigurationDB mDB;
 	// private String code_table;
 	private String inv_code;
 	private Context mContext;
@@ -76,7 +75,7 @@ public class VegetableSlideActivity extends FragmentActivity implements
 		btnVegetSlideActivityOk.setOnClickListener(this);
 		btnVegetSlideActivityBeverages.setOnClickListener(this);
 		btnVegetSlideActivityClose.setOnClickListener(this);
-		mDB = new ConfigurationDB(VegetableSlideActivity.this);
+		//mDB = new ConfigurationDB(VegetableSlideActivity.this);
 		viewPageVegetSliActivityItemSlide = (ViewPager) findViewById(R.id.gridVegetableSliActivityItemSlide);
 		lstVegetItem = new ArrayList<Items>();
 		galleryCateVegetItemSliActivityItem = (Gallery) findViewById(R.id.galleryCateVegetItemSliActivityItem);
@@ -245,7 +244,7 @@ public class VegetableSlideActivity extends FragmentActivity implements
 
 	// ------------ get category from bean-------------//
 	private void getDrawablesList() {
-		mDB.OpenDB(); //
+		//mDB.OpenDB(); //
 		// categoryNext = MainPosActivity.beanDataAll.lstcategory;
 		categoryNext = MainPosActivity.beanDataAll.getCategoryByParent(3);// 3--vegetable
 
@@ -254,6 +253,6 @@ public class VegetableSlideActivity extends FragmentActivity implements
 		}
 		Log.d("Cate:", "  " + categoryNext.size());
 		galImageAdapter.notifyDataSetChanged();
-		mDB.closeDB();
+		//mDB.closeDB();
 	}
 }

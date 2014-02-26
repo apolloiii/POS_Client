@@ -16,7 +16,7 @@ import android.util.Log;
 /* ----------update status==2 when invoiced added--------- */
 public class WSUpdateItableStatus extends AsyncTask<Void, Void, Void> {
 	private int check = 0;
-	private int user_id = 0;
+	private String user_id ;
 	private ArrayList<String> itemTable;
 	private static ConfigurationWS mWS;
 
@@ -28,8 +28,7 @@ public class WSUpdateItableStatus extends AsyncTask<Void, Void, Void> {
 	 * @param user_id
 	 * @param itemTable1
 	 */
-	public WSUpdateItableStatus(Context mContext, int check, int user_id,
-			ArrayList<String> itemTable1) {
+	public WSUpdateItableStatus(Context mContext, int check, String user_id, ArrayList<String> itemTable1) {
 		this.check = check;
 		this.user_id = user_id;
 		itemTable = new ArrayList<String>();
