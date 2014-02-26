@@ -14,6 +14,7 @@ import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 import iii.pos.client.wsclass.WSAddInvTable;
 import iii.pos.client.wsclass.WSAddNewInvoice;
+import iii.pos.client.wsclass.WSDeleteNewInvoice;
 import iii.pos.client.wsclass.WSGetAllItableFreeByFloor;
 import iii.pos.client.wsclass.WSGetFloor;
 import iii.pos.client.wsclass.WSUpdateItableStatus;
@@ -194,9 +195,9 @@ public class MainPosActivityHelper {
 								ArrayList<String> lstCodeTable = new ArrayList<String>();
 								lstCodeTable.add(codeTable);
 								
-								new WSAddNewInvoice(mContext, invCode, 4, MainPosActivity.user_id, "", 0).execute();
-								new WSAddInvTable(mContext, invCode, MainPosActivity.user_id, lstCodeTable).execute();
-								new WSUpdateItableStatus(mContext, 2, MainPosActivity.phoneNumber, lstCodeTable).execute();
+								boolean isSuccessInv = new WSAddNewInvoice(mContext, invCode, 4, MainPosActivity.user_id, "", 0).execute().get();
+								boolean isSuccessItable = new WSAddInvTable(mContext, invCode, MainPosActivity.user_id, lstCodeTable).execute().get();
+								boolean isSuccessUpStatus = new WSUpdateItableStatus(mContext, 2, MainPosActivity.phoneNumber, lstCodeTable).execute().get();
 								
 								/*
 								-------------------add invoice to bean---------------------
@@ -208,10 +209,17 @@ public class MainPosActivityHelper {
 								MainPosActivity.beanDataAll.addInvoice(inv);
 								new WSUpdateItableStatus(InvoicePosFragment.this.context, 2, user_id, itemTable).execute();*/
 								
-								
-								
-								// Chuyển sang màn hình gọi món ăn
-								iAddMenu.addMenuActivity(invCode);
+								if( isSuccessInv && isSuccessItable && isSuccessUpStatus){
+									// Nếu đã tạo xong 3 bước trên
+									// Chuyển sang màn hình gọi món ăn
+									iAddMenu.addMenuActivity(invCode);
+								}else{
+									// Xảy ra lỗi 1 trong 3 bước trên
+									// Xóa DL vừa mới insert vào
+									Toast.makeText(mContext, "Error while create new invoice !", Toast.LENGTH_LONG).show();
+									new WSDeleteNewInvoice(mContext, invCode, codeTable).execute();
+									return;
+								}
 							} else {
 								Toast.makeText(mContext, "Network not found", Toast.LENGTH_LONG).show();
 							}

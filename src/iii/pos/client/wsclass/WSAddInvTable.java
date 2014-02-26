@@ -20,7 +20,7 @@ import android.util.Log;
  * 
  */
 /* ==============add new an Invoice to server================== */
-public class WSAddInvTable extends AsyncTask<Void, Void, Void> {
+public class WSAddInvTable extends AsyncTask<Void, Void, Boolean> {
 	private String inv_code;
 	private ArrayList<String> itemTable;
 	private ConfigurationWS mWS;
@@ -39,10 +39,10 @@ public class WSAddInvTable extends AsyncTask<Void, Void, Void> {
 
 	// =================background method=====================-//
 	@Override
-	protected synchronized Void doInBackground(Void... params) {
+	protected synchronized Boolean doInBackground(Void... params) {
+		boolean isSuccess = false;
 		try {
-
-			String URLAddNewInvoice = ConfigurationServer.getURLServer() + "wsaddinv_itable.php";
+			String URLAddNewInvoice = ConfigurationServer.getURLServer() + "wsclient_add_inv_itable.php";
 			for (String table_code : itemTable) {
 				JSONObject json = new JSONObject();
 				json.put("inv_code", inv_code);
@@ -52,13 +52,14 @@ public class WSAddInvTable extends AsyncTask<Void, Void, Void> {
 				if (arrItem != null) {
 					JSONObject results = arrItem.getJSONObject(0);
 					Log.i("Log : ", "Thanh cong: " + results.getString("success"));
+					isSuccess = true;
 				}
 			}
 
 		} catch (Exception e) {
 			Log.i("Log : ", "Insert INV Detail : " + e.getMessage());
 		}
-		return null;
+		return isSuccess;
 	}
 
 }
