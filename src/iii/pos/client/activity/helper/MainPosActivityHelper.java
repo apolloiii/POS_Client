@@ -177,6 +177,7 @@ public class MainPosActivityHelper {
 				 * 	   Khi waiter xác nhận :
 				 * 			+ Đổi trạng thái bảng pos_invoice với status = 3 ( Đang sử dụng )
 				 * 			+ Đổi lại tên hóa đơn của Guest này.( Ví dụ: G_TenNV_.....)
+				 * 			trong bảng pos_invoice, pos_invoice_detail, pos_invoice_itable
 				 * B10: Sau khi thanh toán hóa đơn của Guest: Hủy hóa đơn 
 				 */
 				
