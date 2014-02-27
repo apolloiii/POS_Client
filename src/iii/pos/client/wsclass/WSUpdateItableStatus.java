@@ -5,6 +5,7 @@ import iii.pos.client.server.ConfigurationWS;
 
 import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,7 +15,7 @@ import android.util.Log;
 
 
 /* ----------update status==2 when invoiced added--------- */
-public class WSUpdateItableStatus extends AsyncTask<Void, Void, Void> {
+public class WSUpdateItableStatus extends AsyncTask<Void, Void, Boolean> {
 	private int check = 0;
 	private String user_id ;
 	private ArrayList<String> itemTable;
@@ -40,20 +41,24 @@ public class WSUpdateItableStatus extends AsyncTask<Void, Void, Void> {
 
 	// --------background method-------------------//
 	@Override
-	protected Void doInBackground(Void... params) {
+	protected Boolean doInBackground(Void... params) {
+		boolean isSuccess = false;
 		try {
-
-			String UrlCheckItableFocus = ConfigurationServer.getURLServer() + "wsupdateitable.php";
+			String UrlCheckItableFocus = ConfigurationServer.getURLServer() + "wsclient_update_invdetail.php";
 			for (String table_code : itemTable) {
 				JSONObject json = new JSONObject();
 				json.put("check", check);
 				json.put("table_code", table_code);
 				json.put("user_id", user_id);
-				mWS.connectWS_Put_Data(UrlCheckItableFocus, json);
+				//mWS.connectWS_Put_Data(UrlCheckItableFocus, json);
+				JSONArray arrItem = mWS.connectWSPut_Get_Data(UrlCheckItableFocus, json, "posts");
+				if (arrItem != null) {
+					JSONObject results = arrItem.getJSONObject(0);
+					Log.i("Log : ", "Thanh cong: " + results.getString("success"));
+					isSuccess = true;
+				}
 			}
-
-		} catch (JSONException e) {
-		}
-		return null;
+		} catch (JSONException e) { }
+		return isSuccess;
 	}
 }
