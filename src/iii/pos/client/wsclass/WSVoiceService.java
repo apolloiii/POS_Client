@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationWS;
 
 import org.json.JSONArray;
@@ -35,6 +36,8 @@ public class WSVoiceService extends AsyncTask<Void, Void, Void> {
 		try {
 			String wsgetdetailinvdetail = /*ConfigurationServer.getURLServer()*/"http://117.6.131.222:6789/pos/wspos/" + "wsvoiceservice.php";
 			JSONObject json = new JSONObject();
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			json.put("invdetail_id", invdetail_id);
 			Log.e("1..........", "" + invdetail_id);
 			json.put("status", status);

@@ -67,6 +67,7 @@ public class WSAddNewInvoice extends AsyncTask<Void, Void, Boolean> {
 			json.put("inv_code", inv_code);
 			json.put("status", status);
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			json.put("inv_type", inv_type);
 			json.put("parent_inv", parent_inv);
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLAddNewInvoice, json, "posts");

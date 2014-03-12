@@ -48,6 +48,8 @@ public class WSAddInvTable extends AsyncTask<Void, Void, Boolean> {
 				json.put("inv_code", inv_code);
 				json.put("table_code", table_code);
 				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
+				
 				JSONArray arrItem = mWS.connectWSPut_Get_Data(URLAddNewInvoice, json, "posts");
 				if (arrItem != null) {
 					JSONObject results = arrItem.getJSONObject(0);
