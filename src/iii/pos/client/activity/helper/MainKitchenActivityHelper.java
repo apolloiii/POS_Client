@@ -1,6 +1,7 @@
 package iii.pos.client.activity.helper;
 
 import iii.pos.client.R;
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.Voice;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
@@ -29,6 +30,7 @@ public class MainKitchenActivityHelper {
 		try {
 			String wsgetdetailinvdetail = ConfigurationServer.getURLServer() + "wsvoiceservice_getallvoice.php";
 			JSONObject json = new JSONObject();
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json, "voiceservice_getallvoice");
 			if (arrItem != null) {

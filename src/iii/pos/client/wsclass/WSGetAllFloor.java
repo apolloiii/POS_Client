@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -40,7 +41,9 @@ public class WSGetAllFloor extends AsyncTask<Void, Void, ArrayList<String>> {
 				// ---------------get String ------------------------//
 				String URLGetAllFloor = ConfigurationServer.getURLServer() + "wsgetallfloor.php";
 				JSONObject json = new JSONObject();
-
+				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
+				
 				JSONArray arrITable = mWs.connectWSPut_Get_Data(URLGetAllFloor, json, "floor");
 
 				for (int i = 0; i < arrITable.length(); i++) {

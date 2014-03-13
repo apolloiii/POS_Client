@@ -43,6 +43,7 @@ public class WSVoiceService_UpdateVoice extends AsyncTask<Void, Void, Void> {
 			json.put("status", status);
 			json.put("flag", flag);
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json,
 					"wsvoiceservice_updatevoice");

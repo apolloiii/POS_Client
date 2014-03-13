@@ -39,6 +39,7 @@ public class WSUpdateInvoiceDetail extends AsyncTask<Void, Void, Void> {
 			json.put("inv_code_old", inv_code_old);
 			json.put("language_code", language_code);
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			mWS.connectWS_Put_Data(URLUpdateJoinInv, json);
 		} catch (Exception e) {
 			Log.i("Log : ", "Exception : " + e.getMessage());

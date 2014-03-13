@@ -672,6 +672,8 @@ public class HeaderPosFragment extends FragmentBase {
 						// ---------------get String ------------------------//
 						String URL = ConfigurationServer.getURLServer()+ "wsgetnamevoice.php";
 						JSONObject json = new JSONObject();
+						json.put("user_id", MainPosActivity.phoneNumber);
+						json.put("company_code", MainPosActivity.company_code);
 						JSONArray jarr = mWS.connectWSPut_Get_Data(URL, json, "posts");
 						for (int i = 0; i < jarr.length(); i++) {
 							JSONObject element = jarr.getJSONObject(i);

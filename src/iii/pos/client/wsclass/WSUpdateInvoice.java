@@ -46,6 +46,7 @@ public class WSUpdateInvoice extends AsyncTask<Void, Void, Void> {
 			json.put("vat", vat);
 			json.put("commision", commision);
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			
 			mWS.connectWS_Put_Data(URLAddnewItem, json);
 

@@ -1,6 +1,7 @@
 package iii.pos.client.adapter;
 
 import iii.pos.client.R;
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.CookItem;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
@@ -130,6 +131,8 @@ public class CookAdapter extends BaseAdapter {
 				String strURL = ConfigurationServer.getURLServer() + "wsupdatecookitemkhiem.php";
 				JSONObject json = new JSONObject();
 				json.put("id", id);
+				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(strURL, json, "posts");
 				if (arrItem != null) {

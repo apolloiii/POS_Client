@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.Itable;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -44,6 +45,8 @@ public class WSGetAllTable extends AsyncTask<String, Void, ArrayList<Itable>> {
 			//ConfigurationServer.getURLServer() + "wsget_all_itable.php"
 			String URL = params[0];
 			JSONObject json = new JSONObject();
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrITable = mWS.connectWSPut_Get_Data(URL, json, "itable");
 			for (int i = 0; i < arrITable.length(); i++) {
 				JSONObject results = arrITable.getJSONObject(i);

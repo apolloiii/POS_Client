@@ -33,6 +33,7 @@ public class WSGetInvoiceClientById extends AsyncTask< Integer, Void, ArrayList<
 			String URLInvoiceClientById = ConfigurationServer.getURLServer() + "wsclient_getallinvoice_byphone.php";
 			JSONObject json = new JSONObject();
 			json.put("user_id", phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrInvoice = mWs.connectWSPut_Get_Data( URLInvoiceClientById, json, "invoice");
 
 			for (int i = 0; i < arrInvoice.length(); i++) {

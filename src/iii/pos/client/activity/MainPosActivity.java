@@ -65,6 +65,7 @@ public class MainPosActivity extends FragmentActivityBase implements HeaderPosFr
 	public static String username;
 	public static String pass;
 	public static String phoneNumber = "-1";
+	public static String company_code = "NH1";
 	
 	private String TAG = "";
 	

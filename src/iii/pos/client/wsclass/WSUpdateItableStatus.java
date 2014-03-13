@@ -51,6 +51,7 @@ public class WSUpdateItableStatus extends AsyncTask<Void, Void, Boolean> {
 				json.put("check", check);
 				json.put("table_code", table_code);
 				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
 				//mWS.connectWS_Put_Data(UrlCheckItableFocus, json);
 				JSONArray arrItem = mWS.connectWSPut_Get_Data(UrlCheckItableFocus, json, "posts");
 				if (arrItem != null) {

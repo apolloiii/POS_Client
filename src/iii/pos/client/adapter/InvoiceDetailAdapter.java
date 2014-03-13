@@ -382,6 +382,7 @@ public class InvoiceDetailAdapter extends ArrayAdapter<Invoice_Detail>{
 				json.put("inv_code", inv_code);
 				json.put("item_id", item_id);
 				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
 				mWS.connectWS_Put_Data(UrlDeleteInv_Detail, json);
 			} catch (JSONException e) {
 
@@ -424,6 +425,7 @@ public class InvoiceDetailAdapter extends ArrayAdapter<Invoice_Detail>{
 					json.put("quantity", items.getQuantity());
 					json.put("comment", items.getComment());
 					json.put("user_id", MainPosActivity.phoneNumber);
+					json.put("company_code", MainPosActivity.company_code);
 					mWS.connectWS_Put_Data(URLAddnewItem, json);
 				}
 			} catch (Exception e) {
@@ -475,6 +477,7 @@ public class InvoiceDetailAdapter extends ArrayAdapter<Invoice_Detail>{
 				json.put("item_id", item_id);
 				json.put("inv_code", inv_code);
 				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json, "inv_d");
 				if (arrItem != null) {

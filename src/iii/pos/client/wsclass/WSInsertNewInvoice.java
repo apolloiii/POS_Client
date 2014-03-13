@@ -60,6 +60,7 @@ public class WSInsertNewInvoice extends AsyncTask<Void, Void, Void> {
 			json.put("inv_code", inv_code);
 			json.put("status", 1);
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			json.put("inv_type", inv_type);
 			json.put("parent_inv", parent_inv);
 			json.put("inv_code_old", nameOldInvoice);

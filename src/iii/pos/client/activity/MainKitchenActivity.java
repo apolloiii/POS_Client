@@ -305,6 +305,7 @@ public class MainKitchenActivity extends Activity implements OnItemClickListener
 				lstTmplInvDetail.clear();
 			JSONObject json = new JSONObject();
 			json.put("key", ConfigurationServer.language_code);
+			json.put("company_code", MainPosActivity.company_code);
 			String strURL = ConfigurationServer.getURLServer()+ "wsgetcookinvdetail.php";
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(strURL, json, "cookinv");
@@ -332,6 +333,7 @@ public class MainKitchenActivity extends Activity implements OnItemClickListener
 			String strURL = ConfigurationServer.getURLServer() + "wsgetcookitem.php";
 			JSONObject json = new JSONObject();
 			json.put("user_id", 1);
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(strURL, json, "gettotalcook");
 			if (arrItem != null) {
@@ -420,6 +422,7 @@ public class MainKitchenActivity extends Activity implements OnItemClickListener
 				JSONObject json = new JSONObject();
 				json.put("item_id", item_id);
 				json.put("user_id", user_id);
+				json.put("company_code", MainPosActivity.company_code);
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(strURL, json, "cookallitem");
 				if (arrItem != null) {
@@ -506,6 +509,7 @@ public class MainKitchenActivity extends Activity implements OnItemClickListener
 				json.put("cook_createtime", cook_createtime);
 				json.put("notes", notes);
 				json.put("checked", checked);
+				json.put("company_code", MainPosActivity.company_code);
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(strURL, json, "posts");
 				if (arrItem != null) {

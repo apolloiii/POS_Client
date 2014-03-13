@@ -28,6 +28,7 @@ public class WSUpdateLogPos extends AsyncTask<Void, Void, Void> {
 			String URLAddnewItem = ConfigurationServer.getURLServer() + "wsupdatelogpos.php";
 			JSONObject json = new JSONObject();
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			mWS.connectWS_Put_Data(URLAddnewItem, json);
 		} catch (Exception e) {
 		}

@@ -1,6 +1,7 @@
 package iii.pos.client.adapter;
 
 import iii.pos.client.R;
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.Invoice_Detail;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
@@ -172,6 +173,8 @@ public class PhucVuAdapter extends BaseAdapter {
 				JSONObject json = new JSONObject();
 				Log.d("id", "ID CAN XU LY LA: " + id);
 				json.put("id", id);
+				json.put("user_id", MainPosActivity.phoneNumber);
+				json.put("company_code", MainPosActivity.company_code);
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(wsupdatedetailinvdetail,
 						json, "posts");

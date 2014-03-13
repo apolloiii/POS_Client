@@ -42,6 +42,7 @@ public class WSDeleteTableById extends AsyncTask<Integer, Void, Void> {
 			JSONObject json = new JSONObject();
 			json.put("itable_id", tableId);
 			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrITable = mWS.connectWSPut_Get_Data(URL, json, "itable");
 			for (int i = 0; i < arrITable.length(); i++) {
 				JSONObject results = arrITable.getJSONObject(i);

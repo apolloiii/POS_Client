@@ -195,9 +195,11 @@ public class BeanDataAll {
 			// ---------------get String ------------------------//
 			URLGetAllInvoice = ConfigurationServer.getURLServer() + "wsgetallinvoice.php";
 			json.put("totalItemCount", "1");
-			 json.put("number_pager", "2");
-			 json.put("user_id", MainPosActivity.phoneNumber);
-				JSONArray arrInvoice = mWS.connectWSPut_Get_Data(URLGetAllInvoice, json, "invoice");
+			json.put("number_pager", "2");
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
+					JSONArray arrInvoice = mWS.connectWSPut_Get_Data(URLGetAllInvoice, json, "invoice");
 			Log.e("............>>", "arrInvoice =" + arrInvoice);
 			for (int i = 0; i < arrInvoice.length(); i++) {
 				JSONObject results = arrInvoice.getJSONObject(i);
@@ -235,6 +237,8 @@ public class BeanDataAll {
 			URLGetAllCategories = ConfigurationServer.getURLServer() + "wsgetallcategories.php";
 			JSONObject json = new JSONObject();
 			json.put("language_code", ConfigurationServer.language_code);
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLGetAllCategories, json, "product");
 			for (int i = 0; i < arrItem.length(); i++) {
 				JSONObject results = arrItem.getJSONObject(i);
@@ -280,7 +284,9 @@ public class BeanDataAll {
 			JSONObject json = new JSONObject();
 			json.put("cate_id", category_id);
 			json.put("language_code", ConfigurationServer.language_code);
-
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
+			
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLGetAllItems, json, "items");
 
 			Log.i("Log : ", "Ok");
@@ -319,7 +325,9 @@ public class BeanDataAll {
 			JSONObject json = new JSONObject();
 			json.put("inv_code", inv_code);
 			json.put("language_code", ConfigurationServer.language_code);
-
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
+			
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLGetAllInvdetail, json, "aninvdetail");
 
 			for (int i = 0; i < arrItem.length(); i++) {
@@ -359,7 +367,9 @@ public class BeanDataAll {
 			JSONObject json = new JSONObject();
 			json.put("cate_id", 0);
 			json.put("language_code", ConfigurationServer.language_code);
-
+			json.put("user_id", MainPosActivity.phoneNumber);
+			json.put("company_code", MainPosActivity.company_code);
+			
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLGetAllInvdetail, json, "invoicedetails");
 			for (int i = 0; i < arrItem.length(); i++) {
 				JSONObject results = arrItem.getJSONObject(i);
