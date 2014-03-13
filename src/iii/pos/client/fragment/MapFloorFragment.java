@@ -1,4 +1,4 @@
-package iii.pos.client.fragment;
+/*package iii.pos.client.fragment;
 
 import iii.pos.client.R;
 import iii.pos.client.activity.MainPosActivity;
@@ -91,10 +91,10 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 		}
 	}
 
-	/**
+	*//**
 	 * onCreate - called when the activity is first created.
 	 * 
-	 */
+	 *//*
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
@@ -174,9 +174,9 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 	}
 
 	public ArrayList<Itable> check(ArrayList<Itable> list) {
-		/*
+		
 		 * pos_table.openDB(); tmpItablelst = pos_table.getItablelst(floor);
-		 */
+		 
 		Log.d("____________hai2", tmpItablelst.size() + "");
 		ArrayList<Itable> arr = new ArrayList<Itable>();
 		int i;
@@ -196,12 +196,12 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 	}
 
 	// initialize all the table on the background
-	/**
+	*//**
 	 * Xử lý việc add bàn lên MapPos dựa vào vị trí bàn 
 	 * Hàm này cần xử lý hiển thị Đa thiết bị.
 	 * @param list : bàn của tầng.
 	 * 
-	 */
+	 *//*
 	public synchronized void addTable(List<Itable> list) {
 
 		if (addtableFlag == true) {
@@ -297,7 +297,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 		WindowManager wm = (WindowManager) getActivity().getSystemService(
 				Context.WINDOW_SERVICE);
 		wm.getDefaultDisplay().getMetrics(displayMetrics);
-		/*int width = displayMetrics.widthPixels;
+		int width = displayMetrics.widthPixels;
 		int height = displayMetrics.heightPixels;
 		ImageView img = new ImageView(getActivity());
 		img.setTag("imgadd");
@@ -312,13 +312,13 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 		img.setBackgroundResource(R.drawable.selector_footer_add);
 		DragLayer.LayoutParams lp = new DragLayer.LayoutParams(50, 50,
 				width - 200, height - 280);
-		mDragLayer.addView(img, lp);*/
+		mDragLayer.addView(img, lp);
 	}
 
-	/**
+	*//**
 	 * Handle a click on a view. Tell the user to use a long click (press).
 	 * 
-	 */
+	 *//*
 
 	// ------III Click to change status of table----//
 	public void onClick(View v) {
@@ -353,7 +353,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							/*--------add new Invoice here-------------------*/
+							--------add new Invoice here-------------------
 							iSelectItable.onSelectItable(2, 1, code_table,
 									user_id);
 						}
@@ -581,9 +581,9 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 		Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
 	} // end toast
 
-	/**
+	*//**
 	 * Send a message to the debug log and display it using Toast.
-	 */
+	 *//*
 
 	public void trace(String msg) {
 		if (!Debugging)
@@ -607,13 +607,13 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 	}
 
 	public interface ISelectItable {
-		/**
+		*//**
 		 * 
 		 * @param id 
 		 * @param status
 		 * @param table_code 
 		 * @param user_id
-		 */
+		 *//*
 		public void onSelectItable(int id, int status, String table_code,
 				int user_id);
 	}
@@ -780,7 +780,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 	}
 
 	// =================Insert Table==================//
-	/*public class WSInsertTable extends AsyncTask<Void, Void, Void> {
+	public class WSInsertTable extends AsyncTask<Void, Void, Void> {
 		private int floor;
 		private ConfigurationWS mWS;
 		private String msg = "";
@@ -856,7 +856,7 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 			}
 		}
 	}
-*/
+
 	// ============ Get inv_code by Itable ==============
 	class WSGetAllTable extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog dialog;
@@ -943,3 +943,4 @@ public class MapFloorFragment extends Fragment implements View.OnLongClickListen
 	}
 
 } // end class
+*/

@@ -176,7 +176,7 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 	@Override
 	public void onResume() {
 		super.onResume();
-		Toast.makeText(getActivity(), "On Resume", Toast.LENGTH_LONG).show();
+		//Toast.makeText(getActivity(), "On Resume", Toast.LENGTH_LONG).show();
 		try {
 			listInvoiceCurrent = new WSGetInvoiceClientById(getActivity()).execute().get();
 			displaydata(listInvoiceCurrent);
@@ -193,7 +193,7 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 	public void onPause() {
 		super.onPause();
 		//ok = false;
-		Toast.makeText(getActivity(), "On pause", Toast.LENGTH_LONG).show();
+		//Toast.makeText(getActivity(), "On pause", Toast.LENGTH_LONG).show();
 		
 	}
 	
@@ -422,12 +422,11 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 			try {
 				try {
 					// ---------------get String ------------------------//
-					String URL = ConfigurationServer.getURLServer()
-							+ "wsgetInvByCodeTable.php";
+					String URL = ConfigurationServer.getURLServer() + "wsgetInvByCodeTable.php";
 					JSONObject json = new JSONObject();
 					json.put("code_table", code_table);
-					JSONArray jarr = mWS.connectWSPut_Get_Data(URL, json,
-							"posts");
+					json.put("user_id", MainPosActivity.phoneNumber);
+					JSONArray jarr = mWS.connectWSPut_Get_Data(URL, json, "posts");
 					for (int i = 0; i < jarr.length(); i++) {
 						JSONObject element = jarr.getJSONObject(i);
 						String inv_code1 = element.getString("inv_code");

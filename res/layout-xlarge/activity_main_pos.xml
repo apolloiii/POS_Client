@@ -1,71 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
     <!-- Body layout amount 95% -->
 
     <LinearLayout
+        android:id="@+id/llout_parent"
         android:layout_width="match_parent"
-        android:layout_height="0.0dip"
-        android:layout_weight="9.5"
-        android:background="@android:color/darker_gray"
-        android:orientation="horizontal" >
-
-        <!-- Left layout amount 70% -->
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible" >
 
         <LinearLayout
-            android:layout_width="0.0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:orientation="vertical" >
+            android:layout_width="match_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="9.5"
+            android:background="@android:color/darker_gray"
+            android:orientation="horizontal" >
 
-            <!-- Header is menu layout 10% -->
-
-            <fragment
-                android:id="@+id/headerMenuFragment"
-                android:name="iii.pos.client.fragment.HeaderPosFragment"
-                android:layout_width="match_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="0.7" />
-
-            <!-- Header is menu layout 90% -->
+            <!-- Left layout amount 70% -->
 
             <LinearLayout
-                android:id="@+id/body_Pos_Container"
-                android:layout_width="match_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="6.3" />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/txtLinecenter"
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="#31A5D1" />
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:orientation="vertical" >
 
-        <!-- Right layout (category, items) 30% -->
+                <!-- Header is menu layout 10% -->
+
+                <fragment
+                    android:id="@+id/headerMenuFragment"
+                    android:name="iii.pos.client.fragment.HeaderPosFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.2" />
+
+                <!-- Header is menu layout 90% -->
+
+                <LinearLayout
+                    android:id="@+id/body_Pos_Container"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="6.3"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtLinecenter"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#31A5D1" />
+
+            <!-- Right layout (category, items) 30% -->
+
+            <LinearLayout
+                android:id="@+id/category_container"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="5.0"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <!-- footer layout amout 5% -->
 
         <LinearLayout
-            android:id="@+id/category_container"
-            android:layout_width="0.0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="5.0" />
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-    <!-- footer layout amout 5% -->
+            <fragment
+                android:id="@+id/footer_Pos_Fragment"
+                android:name="iii.pos.client.fragment.FooterPosFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llout_wait"
         android:layout_width="match_parent"
-        android:layout_height="0.0dip"
-        android:layout_weight="0.5"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
 
-        <fragment
-            android:id="@+id/footer_Pos_Fragment"
-            android:name="iii.pos.client.fragment.FooterPosFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..." />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

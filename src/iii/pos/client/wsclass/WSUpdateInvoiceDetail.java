@@ -2,6 +2,7 @@ package iii.pos.client.wsclass;
 /**
  * update hoa don vao bang invoice_detail khi them ban vao invoice
  */
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -37,6 +38,7 @@ public class WSUpdateInvoiceDetail extends AsyncTask<Void, Void, Void> {
 			json.put("inv_code", inv_code_new);
 			json.put("inv_code_old", inv_code_old);
 			json.put("language_code", language_code);
+			json.put("user_id", MainPosActivity.phoneNumber);
 			mWS.connectWS_Put_Data(URLUpdateJoinInv, json);
 		} catch (Exception e) {
 			Log.i("Log : ", "Exception : " + e.getMessage());

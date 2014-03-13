@@ -10,7 +10,6 @@ import iii.pos.client.fragment.InvoiceDetailPosFragment;
 import iii.pos.client.fragment.InvoiceDetailPosFragment.IAddMenu;
 import iii.pos.client.fragment.InvoicePosFragment;
 import iii.pos.client.fragment.InvoicePosFragment.IAddFragment;
-import iii.pos.client.fragment.MapFloorFragment.ISelectItable;
 import iii.pos.client.menu.BeanInvDetailTmpl;
 import iii.pos.client.model.Invoice_Detail;
 import iii.pos.client.model.User;
@@ -37,9 +36,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainPosActivity extends FragmentActivityBase
-		implements HeaderPosFragment.OnHeaderSelectedListener, IAddFragment,
-		ISelectItable, IAddMenu {
+public class MainPosActivity extends FragmentActivityBase implements HeaderPosFragment.OnHeaderSelectedListener, IAddFragment, IAddMenu {
 
 	public final static String CODE_TABLE = "CODE_TABLE";
 	public final static String INVOICE_CODE = "INVOICE_CODE";
@@ -70,6 +67,9 @@ public class MainPosActivity extends FragmentActivityBase
 	public static String phoneNumber = "-1";
 	
 	private String TAG = "";
+	
+	private LinearLayout waitLayout;
+	private LinearLayout parentLayout;
  
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +80,8 @@ public class MainPosActivity extends FragmentActivityBase
 	}
 	
 	public void initView(){
+		waitLayout = (LinearLayout)findViewById(R.id.llout_wait);
+		parentLayout = (LinearLayout)findViewById(R.id.llout_parent);
 		policy();
 
 		String tempURL = new ConfigurationServer(MainPosActivity.this).getURLServerFromFile();
@@ -107,7 +109,7 @@ public class MainPosActivity extends FragmentActivityBase
 		/*if (myShare.getUerItem().equals("null") && myShare.getPassWordItem().equals("null") && myShare.getUser_id() == -1) {
 		}*/
 
-		if (ConfigurationServer.body != 0)
+		//if (ConfigurationServer.body != 0)
 			//loadActivtyChild();
 		
 		posActivityHelper = new MainPosActivityHelper(this, mWS,user);
@@ -180,7 +182,6 @@ public class MainPosActivity extends FragmentActivityBase
 	private void logInOrOut(Context context) {
 		URL = ConfigurationServer.getURLServer() + "wslogin.php";
 		posActivityHelper.setOnListenerLogInOrOut(new OnListenerLogInOrOut() {
-			
 			@Override
 			public void onLoginSuccess(String username) {
 				MainPosActivity.username = username;
@@ -189,7 +190,9 @@ public class MainPosActivity extends FragmentActivityBase
 				footerText.setText("USER: " + username.toUpperCase() + "---" + getResources().getString(R.string.logintime) + currentDateTimeString.toUpperCase());
 				user.setUsername(username);
 				// ===============Insert user to Log==============//
-				new WSAddLogPos(MainPosActivity.this, user_id).execute();
+				//new WSAddLogPos(MainPosActivity.this, user_id).execute();
+				parentLayout.setVisibility(View.VISIBLE);
+				waitLayout.setVisibility(View.GONE);
 			}
 			
 			@Override
@@ -232,10 +235,10 @@ public class MainPosActivity extends FragmentActivityBase
 				Committion);
 	}
 
-	@Override
+/*	@Override
 	public void onSelectItable(int id, int status, String table_code, int user_id) {
 		loadFragment(id, status, table_code, user_id);
-	}
+	}*/
 
 	@Override
 	public void addMenuActivity(String inv_code) {

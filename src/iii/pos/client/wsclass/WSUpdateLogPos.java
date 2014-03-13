@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -26,7 +27,7 @@ public class WSUpdateLogPos extends AsyncTask<Void, Void, Void> {
 		try {
 			String URLAddnewItem = ConfigurationServer.getURLServer() + "wsupdatelogpos.php";
 			JSONObject json = new JSONObject();
-			json.put("user_id", user_id);
+			json.put("user_id", MainPosActivity.phoneNumber);
 			mWS.connectWS_Put_Data(URLAddnewItem, json);
 		} catch (Exception e) {
 		}

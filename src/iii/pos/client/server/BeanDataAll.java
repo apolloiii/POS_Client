@@ -1,5 +1,6 @@
 package iii.pos.client.server;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.Category;
 import iii.pos.client.model.Invoice;
 import iii.pos.client.model.Invoice_Detail;
@@ -26,11 +27,11 @@ import android.widget.Toast;
 public class BeanDataAll {
 
 	/*-----------------list User-----------------------------*/
-	public ArrayList<User> lstUser;
+	//public ArrayList<User> lstUser;
 	/*-----------------list Invoice---------------------------*/
 	public List<Invoice> lstInvoice;
 	/*-----------------list table by floor--------------------*/
-	public List<Itable> lstItableByFloor;
+	//public List<Itable> lstItableByFloor;
 	/*-----------------list Invoice_detail--------------------*/
 	public List<Invoice_Detail> lstInvDetail;
 	/*-----------------list Item -----------------------------*/
@@ -42,8 +43,8 @@ public class BeanDataAll {
 	
 	// Trọng Khiêm : Đổi lại tên lstItable thành lstItableByFloor ko sử dụng của anh Thuận nữa.
 	// Khai báo một lstItable chứa tất cả các bàn của các tầng khác nhau
-	public ArrayList<Itable> lstAllItable ;
-	public static List<Invoice> lstInvoiceMoke;
+	//public ArrayList<Itable> lstAllItable ;
+	//public static List<Invoice> lstInvoiceMoke;
 	
 	private ConfigurationWS mWS;
 	private Context context;
@@ -63,13 +64,13 @@ public class BeanDataAll {
 
 		lstInvoice = new CopyOnWriteArrayList<Invoice>();
 		lstItems = new ArrayList<Items>();
-		lstItableByFloor = new CopyOnWriteArrayList<Itable>();
+		//lstItableByFloor = new CopyOnWriteArrayList<Itable>();
 		lstcategory = new ArrayList<Category>();
-		lstUser = new ArrayList<User>();
+		//lstUser = new ArrayList<User>();
 		lstInvDetail = new CopyOnWriteArrayList<Invoice_Detail>();
 		lstAnInvDetail = new CopyOnWriteArrayList<Invoice_Detail>();
-		lstAllItable = new ArrayList<Itable>();
-		lstInvoiceMoke = new ArrayList<Invoice>();
+		/*lstAllItable = new ArrayList<Itable>();
+		lstInvoiceMoke = new ArrayList<Invoice>();*/
 		
 		this.context = context;
 		mWS = new ConfigurationWS(context);
@@ -93,7 +94,7 @@ public class BeanDataAll {
 	}
 
 	/* --------------get User data from server-------- */
-	public void makeDataUser() {
+	/*public void makeDataUser() {
 		if (lstUser != null)
 			lstUser.clear();
 		try {
@@ -115,12 +116,12 @@ public class BeanDataAll {
 		} catch (Exception e) {
 			Log.i("Log : ", "Exception : " + e.getMessage());
 		}
-	}
+	}*/
 	
 	
 	/* --------------get ITable data from server-------- */
 	
-	public ArrayList<Itable> getAllItableOfAllFloor() {
+	/*public ArrayList<Itable> getAllItableOfAllFloor() {
 		// Trọng Khiêm thêm vào:
 		// Lấy thêm tất cả các bàn thuộc các tầng khác nhau
 		try {
@@ -132,16 +133,16 @@ public class BeanDataAll {
 	}
 	
 	
-	/** Set get DL ảo cho ListInvoice */
+	*//** Set get DL ảo cho ListInvoice *//*
 	public static void setLstInvoiceMoke( Invoice lstInvoiceMoke) {
 		BeanDataAll.lstInvoiceMoke.add(lstInvoiceMoke);
 	}
 	public static List<Invoice> getLstInvoiceMoke() {
 		return lstInvoiceMoke;
 	}
+	*/
 	
-	
-	
+	/*
 	public void makeDataTableByFloor(int floor) {
 
 		if (lstItableByFloor != null)
@@ -173,7 +174,7 @@ public class BeanDataAll {
 			Log.i("Log : ", "Exception : " + e.getMessage());
 		}
 
-	}
+	}*/
 
 	/*--------------get Invoice data from server--------*/
 	public void makeDataInvoice1() {
@@ -195,7 +196,8 @@ public class BeanDataAll {
 			URLGetAllInvoice = ConfigurationServer.getURLServer() + "wsgetallinvoice.php";
 			json.put("totalItemCount", "1");
 			 json.put("number_pager", "2");
-			JSONArray arrInvoice = mWS.connectWSPut_Get_Data(URLGetAllInvoice, json, "invoice");
+			 json.put("user_id", MainPosActivity.phoneNumber);
+				JSONArray arrInvoice = mWS.connectWSPut_Get_Data(URLGetAllInvoice, json, "invoice");
 			Log.e("............>>", "arrInvoice =" + arrInvoice);
 			for (int i = 0; i < arrInvoice.length(); i++) {
 				JSONObject results = arrInvoice.getJSONObject(i);
@@ -584,9 +586,9 @@ public class BeanDataAll {
 		@Override
 		protected Void doInBackground(Void... params) {
 			try {
-				makeDataUser();
-				makeDataTableByFloor(4);
-				makeDataInvoice();
+				//makeDataUser();
+				//makeDataTableByFloor(4);
+				//makeDataInvoice();
 				makeDatacategory();
 				makeDataItems(1);
 				// makeDataInvDetail();

@@ -1,4 +1,4 @@
-package iii.pos.client.util;
+/*package iii.pos.client.util;
 
 import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.fragment.MapFloorFragment;
@@ -20,7 +20,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-/**
+*//**
  * A ViewGroup that coordinates dragging across its dscendants.
  * 
  * <p>
@@ -28,13 +28,13 @@ import android.widget.Toast;
  * a bit different in several respects: (1) It extends MyAbsoluteLayout rather
  * than FrameLayout; (2) it implements DragSource and DropTarget methods that
  * were done in a separate Workspace class in the Launcher.
- */
+ *//*
 public class DragLayer extends MyAbsoluteLayout implements DragSource,
 		DropTarget {
 	DragController mDragController;
 	private ConfigurationWS mWS;
 
-	/**
+	*//**
 	 * Used to create a new DragLayer from XML.
 	 * 
 	 * @param context
@@ -42,7 +42,7 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 	 * @param attrs
 	 *            The attribtues set containing the Workspace's customization
 	 *            values.
-	 */
+	 *//*
 	public DragLayer(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mWS = new ConfigurationWS(getContext());
@@ -73,44 +73,44 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 		return mDragController.dispatchUnhandledMove(focused, direction);
 	}
 
-	/**
- */
+	*//**
+ *//*
 	// DragSource interface methods
 
-	/**
+	*//**
 	 * This method is called to determine if the DragSource has something to
 	 * drag.
 	 * 
 	 * @return True if there is something to drag
-	 */
+	 *//*
 
 	public boolean allowDrag() {
 		// In this simple demo, any view that you touch can be dragged.
 		return true;
 	}
 
-	/**
+	*//**
 	 * setDragController
 	 * 
-	 */
+	 *//*
 
-	/* setDragController is already defined. See above. */
+	 setDragController is already defined. See above. 
 
-	/**
+	*//**
 	 * onDropCompleted
 	 * 
-	 */
+	 *//*
 
 	public void onDropCompleted(View target, boolean success) {
 		toast("DragLayer2.onDropCompleted: " + target.getId()
 				+ " Check that the view moved.");
 	}
 
-	/**
- */
+	*//**
+ *//*
 	// DropTarget interface implementation
 
-	/**
+	*//**
 	 * Handle an object being dropped on the DropTarget. This is the where a
 	 * dragged view gets repositioned at the end of a drag.
 	 * 
@@ -131,7 +131,7 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 	 * @param dragInfo
 	 *            Data associated with the object being dragged
 	 * 
-	 */
+	 *//*
 	public void onDrop(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragView dragView, Object dragInfo) {
 		View v = (View) dragInfo;
@@ -187,7 +187,7 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 			int yOffset, DragView dragView, Object dragInfo) {
 	}
 
-	/**
+	*//**
 	 * Check if a drop action can occur at, or near, the requested location.
 	 * This may be called repeatedly during a drag, so any calls should return
 	 * quickly.
@@ -209,13 +209,13 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 	 * @param dragInfo
 	 *            Data associated with the object being dragged
 	 * @return True if the drop will be accepted, false otherwise.
-	 */
+	 *//*
 	public boolean acceptDrop(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragView dragView, Object dragInfo) {
 		return true;
 	}
 
-	/**
+	*//**
 	 * Estimate the surface area where this object would land if dropped at the
 	 * given location.
 	 * 
@@ -240,24 +240,24 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 	 * @return Estimated area that would be occupied if object was dropped at
 	 *         the given location. Should return null if no estimate is found,
 	 *         or if this target doesn't provide estimations.
-	 */
+	 *//*
 	public Rect estimateDropLocation(DragSource source, int x, int y,
 			int xOffset, int yOffset, DragView dragView, Object dragInfo,
 			Rect recycle) {
 		return null;
 	}
 
-	/**
- */
+	*//**
+ *//*
 	// More methods
 
-	/**
+	*//**
 	 * Show a string on the screen via Toast.
 	 * 
 	 * @param msg
 	 *            String
 	 * @return void
-	 */
+	 *//*
 
 	public void toast(String msg) {
 		if (!MapFloorFragment.Debugging)
@@ -266,3 +266,4 @@ public class DragLayer extends MyAbsoluteLayout implements DragSource,
 	} // end toast
 
 } // end class
+*/

@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationWS;
 
 import org.json.JSONArray;
@@ -46,6 +47,7 @@ public class WSVoiceService extends AsyncTask<Void, Void, Void> {
 			json.put("inv_code", inv_code);
 			Log.e("5...........", "" + inv_code);
 			json.put("type", type);
+			json.put("user_id", MainPosActivity.phoneNumber);
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json, "voiceservice");
 			if (arrItem != null) { 

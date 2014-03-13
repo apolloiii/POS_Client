@@ -60,7 +60,7 @@ public class FormatFloorTableName {
 			}
 			
 		}
-		String sFloor = "Tầng " + arrFloor ;
+		String sFloor = "Floor " + arrFloor ;
 		return sFloor;
 	}
 	
@@ -81,7 +81,7 @@ public class FormatFloorTableName {
 			}
 			
 		}
-		String sTable = "Bàn (" + arrTable + ") " ;
+		String sTable = "Table (" + arrTable + ") " ;
 		return sTable;
 	}
 	
@@ -140,7 +140,7 @@ public class FormatFloorTableName {
 				}
 			}
 		}
-		return "Bàn "+sTableName; // Bàn 2
+		return "Table "+sTableName; // Bàn 2
 	}
 	
 	

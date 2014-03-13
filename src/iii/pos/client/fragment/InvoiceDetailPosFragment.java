@@ -522,6 +522,7 @@ public class InvoiceDetailPosFragment extends Fragment {
 				json.put("inv_item", inv_item);
 				json.put("quantity", quantity);
 				json.put("language_code", ConfigurationServer.language_code);
+				json.put("user_id", MainPosActivity.phoneNumber);
 				//JSONArray arrItem = new JSONArray();
 				mWS_Insert.connectWSPut_Get_Data(URL, json, "posts");
 		/*		if (arrItem != null) {

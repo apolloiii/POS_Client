@@ -17,10 +17,14 @@ import android.util.Log;
 public class WSGetAllItableFreeByFloor extends AsyncTask<Integer, Void, ArrayList<Itable>>{
 	
 	private ConfigurationWS mWS;
+	private ProgressDialog dialog;
 	
 	public WSGetAllItableFreeByFloor(Context mContext) {
 		super();
 		mWS = new ConfigurationWS(mContext);
+		dialog = new ProgressDialog(mContext);
+		dialog.setMessage("Loading");
+		dialog.show();
 	}
 
 	@Override
@@ -51,6 +55,14 @@ public class WSGetAllItableFreeByFloor extends AsyncTask<Integer, Void, ArrayLis
 			Log.i("Log : ", "Exception : " + e.getMessage());
 		}
 		return lstItableByFloors;
+	}
+	
+	@Override
+	protected void onPostExecute(ArrayList<Itable> result) {
+		super.onPostExecute(result);
+		if(dialog.isShowing()){
+			dialog.dismiss();
+		}
 	}
 
 }

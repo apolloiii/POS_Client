@@ -52,6 +52,12 @@ public class WSGetFloor extends AsyncTask<Void, Void, ArrayList<Floor>> {
 				lstFloor.add(floor);
 			}
 		} catch (Exception e) {
+			Floor floor = new Floor();
+			floor.setId(0);
+			floor.setCode("null");
+			floor.setName("null");
+			floor.setStatus(0);
+			lstFloor.add(floor);
 			Log.e("ERROR", "Lỗi trong quá trình lấy danh sách Floor");
 		}
 
@@ -60,6 +66,7 @@ public class WSGetFloor extends AsyncTask<Void, Void, ArrayList<Floor>> {
 
 	@Override
 	protected void onPostExecute(ArrayList<Floor> result) {
-		if( mProgress.isShowing()) mProgress.dismiss();
+		if( mProgress.isShowing()) 
+			mProgress.dismiss();
 	}
 }

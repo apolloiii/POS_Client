@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -41,6 +42,7 @@ public class WSVoiceService_UpdateVoice extends AsyncTask<Void, Void, Void> {
 			json.put("voice_id", voice_id);
 			json.put("status", status);
 			json.put("flag", flag);
+			json.put("user_id", MainPosActivity.phoneNumber);
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json,
 					"wsvoiceservice_updatevoice");

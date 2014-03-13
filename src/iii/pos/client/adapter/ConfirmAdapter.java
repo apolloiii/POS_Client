@@ -161,6 +161,8 @@ public class ConfirmAdapter extends BaseAdapter {
 				JSONObject json = new JSONObject();
 				json.put("id", id);
 				json.put("inv_code", inv_code);
+				json.put("user_id", MainPosActivity.phoneNumber);
+				
 				mWS.connectWS_Put_Data(wsdelDetailInvdetail, json);
 
 			} catch (JSONException e) {
@@ -215,6 +217,7 @@ public class ConfirmAdapter extends BaseAdapter {
 
 				JSONObject json = new JSONObject();
 				json.put("id", id);
+				json.put("user_id", MainPosActivity.phoneNumber);
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(wsupdatedetailinvdetail, json, "posts");
 				if (arrItem != null) {

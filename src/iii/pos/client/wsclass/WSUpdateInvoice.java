@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -44,7 +45,8 @@ public class WSUpdateInvoice extends AsyncTask<Void, Void, Void> {
 			json.put("cost", cost);
 			json.put("vat", vat);
 			json.put("commision", commision);
-
+			json.put("user_id", MainPosActivity.phoneNumber);
+			
 			mWS.connectWS_Put_Data(URLAddnewItem, json);
 
 		} catch (Exception e) {

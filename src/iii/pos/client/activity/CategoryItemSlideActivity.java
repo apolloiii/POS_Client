@@ -72,17 +72,17 @@ public class CategoryItemSlideActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.category_slide);
 		
-		String phoneId = new GetDeviceInfo(getApplicationContext()).getDeviceId();
+		/*String phoneId = new GetDeviceInfo(getApplicationContext()).getDeviceId();
 		String phoneNumber = new GetDeviceInfo(getApplicationContext()).getPhoneNumber();
 		Toast.makeText(context, phoneId +"   "+phoneNumber, Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "  "+phoneNumber, Toast.LENGTH_SHORT).show();
+		Toast.makeText(context, "  "+phoneNumber, Toast.LENGTH_SHORT).show();*/
 		
 		// ---------get code_table, inv_code from preview activity----------//
 		Bundle bundle = getIntent().getExtras();
 		if (bundle != null) {
 			inv_code = bundle.getString("INVOICE_CODE");
 			//makeDataInvoiceMoke(inv_code);
-			Toast.makeText(getApplicationContext(), "Get Intent " + inv_code, Toast.LENGTH_LONG) .show();
+			//Toast.makeText(getApplicationContext(), "Get Intent " + inv_code, Toast.LENGTH_LONG) .show();
 		}
 
 		//mDB = new ConfigurationDB(context);
@@ -130,7 +130,7 @@ public class CategoryItemSlideActivity extends FragmentActivity implements
 	 * @param sInvCode : Guest_T1_B2_20142402121212
 	 *  
 	 */
-	private void makeDataInvoiceMoke(String sInvCode){
+	/*private void makeDataInvoiceMoke(String sInvCode){
 		String codeTable = new FormatFloorTableName().joinFloorAndTable(sInvCode); // T1_B2
 		String simpDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
 		
@@ -172,7 +172,7 @@ public class CategoryItemSlideActivity extends FragmentActivity implements
 			invoice.setLstCodeTables(listCodeTable);
 			BeanDataAll.setLstInvoiceMoke(invoice);
 		}
-	}
+	}*/
 	
 	
 	// ----------Threading make data item-------//

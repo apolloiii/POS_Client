@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.Itable;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
@@ -42,6 +43,7 @@ public class WSUpdateItable extends AsyncTask<Itable, Void, Void> {
 			json.put("code_table", itable.getCode_table());
 			json.put("pos_x", itable.getPos_x());
 			json.put("pos_y", itable.getPos_y());
+			json.put("user_id", MainPosActivity.phoneNumber);
 			
 			Log.i("JSON UPDATE_ITABLE: table_id: ", itable.getItable_id()+"");
 			Log.i("JSON UPDATE_ITABLE: code_table: ", itable.getCode_table());

@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.model.Itable;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
@@ -44,6 +45,7 @@ public class WSInsertNewItable extends AsyncTask<Itable, Void, Void> {
 			json.put("pos_y", itable.getPos_y());
 			json.put("location_x", itable.getLocation_X());
 			json.put("location_y", itable.getLocation_Y());
+			json.put("user_id", MainPosActivity.phoneNumber);
 			
 			Log.i("JSON NEW_ITABLE: code_table: ", itable.getCode_table());
 			Log.i("JSON NEW_ITABLE: locationX", itable.getLocation_X()+"");

@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -34,6 +35,7 @@ public class WSUpdateJoinInv extends AsyncTask<Void, Void, Void> {
 			JSONObject json = new JSONObject();
 			json.put("inv_code_new", inv_code_new);
 			json.put("inv_code_old", inv_code_old);
+			json.put("user_id", MainPosActivity.phoneNumber);
 			mWS.connectWS_Put_Data(URLUpdateJoinInv, json);
 
 		} catch (Exception e) {

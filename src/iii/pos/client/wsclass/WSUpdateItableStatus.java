@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -49,7 +50,7 @@ public class WSUpdateItableStatus extends AsyncTask<Void, Void, Boolean> {
 				JSONObject json = new JSONObject();
 				json.put("check", check);
 				json.put("table_code", table_code);
-				json.put("user_id", user_id);
+				json.put("user_id", MainPosActivity.phoneNumber);
 				//mWS.connectWS_Put_Data(UrlCheckItableFocus, json);
 				JSONArray arrItem = mWS.connectWSPut_Get_Data(UrlCheckItableFocus, json, "posts");
 				if (arrItem != null) {

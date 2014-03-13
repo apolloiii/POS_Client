@@ -22,14 +22,14 @@
     <color name="blue">#00FF40</color>
     <color name="yellow">#FFFF00</color>
     <color name="gray"> #929491</color>
+    <color name="_gray"> #696969</color>
     <color name="inv1"> #7EB5D6</color>
     <color name="inv2"> #D4E7ED</color>
     <color name="tvColor">#008000</color>
     <color name="newcolor">#fff000</color>
-    
     <color name="testcolor1">#fff</color>
-  <color name="testcolor2">#FFFF00</color>
-  
- <color name="report_item_color1">#E5C1A7</color>
+    <color name="testcolor2">#FFFF00</color>
+    <color name="report_item_color1">#E5C1A7</color>
     <color name="report_item_color2">#D2B18F</color>
+
 </resources>

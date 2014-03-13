@@ -1,5 +1,6 @@
 package iii.pos.client.wsclass;
 
+import iii.pos.client.activity.MainPosActivity;
 import iii.pos.client.server.ConfigurationServer;
 import iii.pos.client.server.ConfigurationWS;
 
@@ -42,7 +43,8 @@ public class WSDestroyInvoice extends AsyncTask<Void, Void, Void> {
 			json.put("cost", cost);
 			json.put("total", total);
 			json.put("inv_type", inv_type);
-
+			json.put("user_id", MainPosActivity.phoneNumber);
+			
 			mWS.connectWS_Put_Data(UrlPayment, json);
 		} catch (JSONException e) {
 

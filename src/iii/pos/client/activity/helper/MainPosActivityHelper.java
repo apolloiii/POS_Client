@@ -2,6 +2,7 @@ package iii.pos.client.activity.helper;
 
 import iii.pos.client.R;
 import iii.pos.client.activity.MainPosActivity;
+import iii.pos.client.adapter.SpinnerAdapterFloor;
 import iii.pos.client.adapter.SpinnerAdapterTable;
 import iii.pos.client.data.Constaints;
 import iii.pos.client.fragment.InvoiceDetailPosFragment.IAddMenu;
@@ -82,9 +83,9 @@ public class MainPosActivityHelper {
 	}
 	
 	public void logInOrOut(final String URL){
-		final Dialog dialog = new Dialog(new ContextThemeWrapper(mContext, android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar));
+		final Dialog dialog = new Dialog(new ContextThemeWrapper(mContext, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen));
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.login_client);
+		dialog.setContentView(R.layout.login_client_);
 		dialog.setCancelable(false);
 		dialog.show();
 		
@@ -102,15 +103,15 @@ public class MainPosActivityHelper {
 		refreshSpinnerFloor(spMainFloor);
 		
 		// Hiển thị bàn theo mã tầng
-		int floor = (Integer) spMainFloor.getSelectedItem();
-		refreshSpinnerTable(spMainTable,floor);
+		Floor floor = (Floor) spMainFloor.getSelectedItem();
+		refreshSpinnerTable(spMainTable,floor.getId());
 		
 		// Mỗi khi chọn tầng => Refesh lại màn hình chọn bàn
 		spMainFloor.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View view, int position, long arg3) {
-				int floor = (Integer) spMainFloor.getItemAtPosition(position);
-				refreshSpinnerTable(spMainTable,floor);
+				Floor floor = (Floor) spMainFloor.getItemAtPosition(position);
+				refreshSpinnerTable(spMainTable,floor.getId());
 			}
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
@@ -272,12 +273,15 @@ public class MainPosActivityHelper {
 		try {
 			// ArrayList<String> lstFloor = new WSGetAllFloor(mContext).execute().get();
 			 ArrayList<Floor> lstFloors = new WSGetFloor(mContext).execute().get();
-			 ArrayList<Integer> lstFloorId = new ArrayList<Integer>();
+			/* ArrayList<Integer> lstFloorId = new ArrayList<Integer>();
 			 for (Floor floor : lstFloors) {
 				 lstFloorId.add(floor.getId());
 			 }
 			 if( lstFloorId.size() == 0 ) lstFloorId.add(0); 
 			 ArrayAdapter<Integer> adapterFloor = new ArrayAdapter<Integer>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, lstFloorId);
+			*/
+			 SpinnerAdapterFloor adapterFloor = new SpinnerAdapterFloor(lstFloors, mContext);
+				
 			 spMainFloor.setAdapter(adapterFloor);
 			 adapterFloor.notifyDataSetChanged();
 		} catch (Exception e1) {
