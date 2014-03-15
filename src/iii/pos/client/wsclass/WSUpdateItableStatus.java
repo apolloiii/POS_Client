@@ -18,7 +18,6 @@ import android.util.Log;
 /* ----------update status==2 when invoiced added--------- */
 public class WSUpdateItableStatus extends AsyncTask<Void, Void, Boolean> {
 	private int check = 0;
-	private String user_id ;
 	private ArrayList<String> itemTable;
 	private static ConfigurationWS mWS;
 
@@ -30,9 +29,8 @@ public class WSUpdateItableStatus extends AsyncTask<Void, Void, Boolean> {
 	 * @param user_id
 	 * @param itemTable1
 	 */
-	public WSUpdateItableStatus(Context mContext, int check, String user_id, ArrayList<String> itemTable1) {
+	public WSUpdateItableStatus(Context mContext, int check, ArrayList<String> itemTable1) {
 		this.check = check;
-		this.user_id = user_id;
 		itemTable = new ArrayList<String>();
 		mWS = new ConfigurationWS(mContext);
 		for (String string : itemTable1) {
@@ -50,8 +48,8 @@ public class WSUpdateItableStatus extends AsyncTask<Void, Void, Boolean> {
 				JSONObject json = new JSONObject();
 				json.put("check", check);
 				json.put("table_code", table_code);
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				//mWS.connectWS_Put_Data(UrlCheckItableFocus, json);
 				JSONArray arrItem = mWS.connectWSPut_Get_Data(UrlCheckItableFocus, json, "posts");
 				if (arrItem != null) {

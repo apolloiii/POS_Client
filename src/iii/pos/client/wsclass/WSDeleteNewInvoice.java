@@ -38,8 +38,8 @@ public class WSDeleteNewInvoice extends AsyncTask<Void, Void, Void> {
 			JSONObject json = new JSONObject();
 			json.put("inv_code", inv_code);
 			json.put("code_table", code_table);
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLAddNewInvoice, json, "posts");
 			if (arrItem != null) {

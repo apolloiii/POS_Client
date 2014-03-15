@@ -128,7 +128,7 @@ public class ListInvoiceAdapter extends ArrayAdapter<Invoice> {
 						}
 					});  //no comment// ssss
 			holder.cbCheckbox.setChecked(lstInv.get(position).isCheck());
-			if (inv.getUser_id() !=  MainPosActivity.user_id ) {
+			if (inv.getUser_id() !=  MainPosActivity.user.getUser_id() ) {
 				holder.cbCheckbox.setEnabled(true);
 			}   
 			if (inv != null) {

@@ -49,8 +49,8 @@ public class WSAddNewInvDetail extends AsyncTask<Void, Void, Void> {
 				json.put("item_id", items.getItem_id());// IIIPOS
 				json.put("quantity", items.getQuantity());
 				json.put("comment", items.getComment());
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				
 				mWS.connectWS_Put_Data(URLAddnewItem, json);
 			}

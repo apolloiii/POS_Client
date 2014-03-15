@@ -22,7 +22,6 @@ import android.util.Log;
 public class WSAddNewInvoice extends AsyncTask<Void, Void, Boolean> {
 	private String inv_code;
 	private int status;
-	private int user_id;
 	private String parent_inv;
 	private int inv_type;
 	private ConfigurationWS mWS;
@@ -35,15 +34,13 @@ public class WSAddNewInvoice extends AsyncTask<Void, Void, Boolean> {
 	 * @param mContext
 	 * @param inv_code
 	 * @param status : Trạng thái hóa đơn
-	 * @param user_id : Mã user
 	 * @param parent_inv : invoice cha
 	 * @param inv_type : 
 	 */
-	public WSAddNewInvoice(Context mContext, String inv_code, int status, int user_id,  String parent_inv, int inv_type) {
+	public WSAddNewInvoice(Context mContext, String inv_code, int status, String parent_inv, int inv_type) {
 		this.inv_code = inv_code;
 		this.mContext = mContext;
 		this.status = status;
-		this.user_id = user_id;
 		this.parent_inv = parent_inv;
 		this.inv_type = inv_type;
 		mWS = new ConfigurationWS(mContext);
@@ -66,8 +63,8 @@ public class WSAddNewInvoice extends AsyncTask<Void, Void, Boolean> {
 			JSONObject json = new JSONObject();
 			json.put("inv_code", inv_code);
 			json.put("status", status);
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			json.put("inv_type", inv_type);
 			json.put("parent_inv", parent_inv);
 			JSONArray arrItem = mWS.connectWSPut_Get_Data(URLAddNewInvoice, json, "posts");

@@ -15,14 +15,16 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class WSGetFloor extends AsyncTask<Void, Void, ArrayList<Floor>> {
+public class WSGetFloorByCompany extends AsyncTask<Void, Void, ArrayList<Floor>> {
 
 	private ConfigurationWS mWs;
 	private ProgressDialog mProgress;
-
-	public WSGetFloor(Context mContext) {
+	private String companyCode;
+	
+	public WSGetFloorByCompany(Context mContext, String companyCode) {
 		super();
 		this.mWs = new ConfigurationWS(mContext);
+		this.companyCode = companyCode;
 		mProgress = new ProgressDialog(mContext);
 	}
 
@@ -30,7 +32,6 @@ public class WSGetFloor extends AsyncTask<Void, Void, ArrayList<Floor>> {
 	protected void onPreExecute() {
 		super.onPreExecute();
 		mProgress.setMessage("Loading...");
-		mProgress.setCancelable(false);
 		mProgress.show();
 	}
 
@@ -38,10 +39,10 @@ public class WSGetFloor extends AsyncTask<Void, Void, ArrayList<Floor>> {
 	protected ArrayList<Floor> doInBackground(Void... params) {
 		ArrayList<Floor> lstFloor = new ArrayList<Floor>();
 		try {
-			String URLGetAllFloor = ConfigurationServer.getURLServer() + "wsgetallfloor.php";
+			String URLGetAllFloor = ConfigurationServer.getURLServer() + "wsclient_get_floor_by_company.php";
 			JSONObject json = new JSONObject();
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", companyCode);
 			
 			JSONArray arrITable = mWs.connectWSPut_Get_Data(URLGetAllFloor, json, "floor");
 

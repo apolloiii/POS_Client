@@ -436,8 +436,8 @@ public class InvoiceDetailPosFragment extends Fragment {
 				JSONObject json = new JSONObject();
 				json.put("inv_code", inv_code);
 				json.put("language_code", ConfigurationServer.language_code);
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				
 				JSONArray arrItem = mWS.connectWSPut_Get_Data(
 						URLGetAllInvdetail, json, "aninvdetail");
@@ -524,8 +524,8 @@ public class InvoiceDetailPosFragment extends Fragment {
 				json.put("inv_item", inv_item);
 				json.put("quantity", quantity);
 				json.put("language_code", ConfigurationServer.language_code);
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				//JSONArray arrItem = new JSONArray();
 				mWS_Insert.connectWSPut_Get_Data(URL, json, "posts");
 		/*		if (arrItem != null) {

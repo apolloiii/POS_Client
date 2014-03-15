@@ -36,8 +36,8 @@ public class WSVoiceService extends AsyncTask<Void, Void, Void> {
 		try {
 			String wsgetdetailinvdetail = /*ConfigurationServer.getURLServer()*/"http://117.6.131.222:6789/pos/wspos/" + "wsvoiceservice.php";
 			JSONObject json = new JSONObject();
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			json.put("invdetail_id", invdetail_id);
 			Log.e("1..........", "" + invdetail_id);
 			json.put("status", status);
@@ -49,7 +49,6 @@ public class WSVoiceService extends AsyncTask<Void, Void, Void> {
 			json.put("inv_code", inv_code);
 			Log.e("5...........", "" + inv_code);
 			json.put("type", type);
-			json.put("user_id", MainPosActivity.phoneNumber);
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json, "voiceservice");
 			if (arrItem != null) { 

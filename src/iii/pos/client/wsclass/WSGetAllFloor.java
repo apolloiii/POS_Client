@@ -41,8 +41,8 @@ public class WSGetAllFloor extends AsyncTask<Void, Void, ArrayList<String>> {
 				// ---------------get String ------------------------//
 				String URLGetAllFloor = ConfigurationServer.getURLServer() + "wsgetallfloor.php";
 				JSONObject json = new JSONObject();
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				
 				JSONArray arrITable = mWs.connectWSPut_Get_Data(URLGetAllFloor, json, "floor");
 

@@ -45,8 +45,8 @@ public class WSInsertNewItable extends AsyncTask<Itable, Void, Void> {
 			json.put("pos_y", itable.getPos_y());
 			json.put("location_x", itable.getLocation_X());
 			json.put("location_y", itable.getLocation_Y());
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			
 			Log.i("JSON NEW_ITABLE: code_table: ", itable.getCode_table());
 			Log.i("JSON NEW_ITABLE: locationX", itable.getLocation_X()+"");

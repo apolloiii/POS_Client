@@ -46,7 +46,7 @@ public class MainPosActivity extends FragmentActivityBase implements HeaderPosFr
 	private View footer = null;
 	public static User user;
 
-	public static int user_id = 0;
+	//public static int user_id = 0;
 	public static LinearLayout category_container;
 	public static String inv_code;
 	public static String code_table;
@@ -62,10 +62,11 @@ public class MainPosActivity extends FragmentActivityBase implements HeaderPosFr
 	public WSAddLogPos wsAddLogPos;
 	
 	private MainPosActivityHelper posActivityHelper;
-	public static String username;
-	public static String pass;
-	public static String phoneNumber = "-1";
-	public static String company_code = "NH1";
+	
+	//public static String username;
+	//public static String pass;
+	//public static String phoneNumber = "-1";
+	//public static String company_code = "NH1";
 	
 	private String TAG = "";
 	
@@ -184,12 +185,16 @@ public class MainPosActivity extends FragmentActivityBase implements HeaderPosFr
 		URL = ConfigurationServer.getURLServer() + "wslogin.php";
 		posActivityHelper.setOnListenerLogInOrOut(new OnListenerLogInOrOut() {
 			@Override
-			public void onLoginSuccess(String username) {
-				MainPosActivity.username = username;
+			public void onLoginSuccess(String phonenumber, String username, String company) {
+				//MainPosActivity.username = username;
 				String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 				TextView footerText = (TextView) footer.findViewById(R.id.usernamestatus);
 				footerText.setText("USER: " + username.toUpperCase() + "---" + getResources().getString(R.string.logintime) + currentDateTimeString.toUpperCase());
+				
+				user.setUser_id(Integer.parseInt(phonenumber));
 				user.setUsername(username);
+				user.setCompanyCode(company);
+				
 				// ===============Insert user to Log==============//
 				//new WSAddLogPos(MainPosActivity.this, user_id).execute();
 				parentLayout.setVisibility(View.VISIBLE);

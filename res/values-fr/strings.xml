@@ -195,9 +195,10 @@
     <string name="Personpay">Người chi</string>
     <string name="Purpose">Mục đích chi</string>
     <string name="Invoicename">Tên hoá đơn</string>
-    <string name = "logintime">Thời gian đăng nhập: </string>
-    <string name = "expense">Chi tiêu</string>
-		<string name="earning">Thu nhập</string>
-    
-<string name="btnConnectIPAddress">Kết nối</string>
+    <string name="logintime">Thời gian đăng nhập: </string>
+    <string name="expense">Chi tiêu</string>
+    <string name="earning">Thu nhập</string>
+    <string name="appDescription">Bản quyền thuộc về Công ty 3I - POS phiên bản 1.0</string>
+    <string name="btnConnectIPAddress">Kết nối</string>
+
 </resources>

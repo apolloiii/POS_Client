@@ -173,8 +173,8 @@ public class PhucVuAdapter extends BaseAdapter {
 				JSONObject json = new JSONObject();
 				Log.d("id", "ID CAN XU LY LA: " + id);
 				json.put("id", id);
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				JSONArray arrItem = new JSONArray();
 				arrItem = mWS.connectWSPut_Get_Data(wsupdatedetailinvdetail,
 						json, "posts");

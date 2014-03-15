@@ -526,4 +526,5 @@
 		
 		<string name = "expense">Expense</string>
 		<string name="earning">Earning</string>
+		<string name="appDescription">Copyright 3I Company - POS Version 1.0</string>
 </resources>

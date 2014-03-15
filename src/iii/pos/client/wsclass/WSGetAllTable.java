@@ -45,8 +45,8 @@ public class WSGetAllTable extends AsyncTask<String, Void, ArrayList<Itable>> {
 			//ConfigurationServer.getURLServer() + "wsget_all_itable.php"
 			String URL = params[0];
 			JSONObject json = new JSONObject();
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			JSONArray arrITable = mWS.connectWSPut_Get_Data(URL, json, "itable");
 			for (int i = 0; i < arrITable.length(); i++) {
 				JSONObject results = arrITable.getJSONObject(i);

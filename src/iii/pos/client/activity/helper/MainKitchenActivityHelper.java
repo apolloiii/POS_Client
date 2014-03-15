@@ -30,7 +30,7 @@ public class MainKitchenActivityHelper {
 		try {
 			String wsgetdetailinvdetail = ConfigurationServer.getURLServer() + "wsvoiceservice_getallvoice.php";
 			JSONObject json = new JSONObject();
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			JSONArray arrItem = new JSONArray();
 			arrItem = mWS.connectWSPut_Get_Data(wsgetdetailinvdetail, json, "voiceservice_getallvoice");
 			if (arrItem != null) {

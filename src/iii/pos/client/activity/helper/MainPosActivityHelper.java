@@ -2,12 +2,11 @@ package iii.pos.client.activity.helper;
 
 import iii.pos.client.R;
 import iii.pos.client.activity.MainPosActivity;
-import iii.pos.client.adapter.SpinnerAdapterFloor;
-import iii.pos.client.adapter.SpinnerAdapterTable;
 import iii.pos.client.data.Constaints;
 import iii.pos.client.fragment.InvoiceDetailPosFragment.IAddMenu;
 import iii.pos.client.library.CheckValidate;
 import iii.pos.client.library.GetDeviceInfo;
+import iii.pos.client.model.Company;
 import iii.pos.client.model.Floor;
 import iii.pos.client.model.Itable;
 import iii.pos.client.model.User;
@@ -17,7 +16,8 @@ import iii.pos.client.wsclass.WSAddInvTable;
 import iii.pos.client.wsclass.WSAddNewInvoice;
 import iii.pos.client.wsclass.WSDeleteNewInvoice;
 import iii.pos.client.wsclass.WSGetAllItableFreeByFloor;
-import iii.pos.client.wsclass.WSGetFloor;
+import iii.pos.client.wsclass.WSGetCompanyCode;
+import iii.pos.client.wsclass.WSGetFloorByCompany;
 import iii.pos.client.wsclass.WSUpdateItableStatus;
 
 import java.text.SimpleDateFormat;
@@ -28,19 +28,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.ImageButton;
 import android.widget.Toast;
 /**
  * Màn hình xử lý Cho Client - Guest.
@@ -65,8 +65,12 @@ public class MainPosActivityHelper {
 	private User user;
 	//private String user_title = "";
 	public OnListenerLogInOrOut onListenerLogInOrOut;
+	public IOnClickButtonFloor onClickButtonFloor;
 	//private ISelectItable iSelectItable;
 	private IAddMenu iAddMenu ;
+	
+	private String companyCode;
+	private int floor = -1;
 	
 	public MainPosActivityHelper(Context mContext, ConfigurationWS mWS, User user){
 		this.mContext = mContext;
@@ -82,54 +86,135 @@ public class MainPosActivityHelper {
 		this.onListenerLogInOrOut = onListenerLogInOrOut;
 	}
 	
+	private void setOnClickButtonFloor(IOnClickButtonFloor onClickButtonFloor){
+		this.onClickButtonFloor = onClickButtonFloor;
+	}
+	
 	public void logInOrOut(final String URL){
 		final Dialog dialog = new Dialog(new ContextThemeWrapper(mContext, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen));
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.login_client_);
+		dialog.setContentView(R.layout.login_pos);
 		dialog.setCancelable(false);
 		dialog.show();
 		
-		final Spinner spMainFloor = (Spinner) dialog.findViewById(R.id.spMainFloor);
-		final Spinner spMainTable = (Spinner) dialog.findViewById(R.id.spMainTable);
+		//final Spinner spMainFloor = (Spinner) dialog.findViewById(R.id.spMainFloor);
+		//final Spinner spMainTable = (Spinner) dialog.findViewById(R.id.spMainTable);
 		
 		final EditText edtMainGuestName = (EditText) dialog.findViewById(R.id.edtMainGuestName);
 		final EditText edtMainGuestPhoneNumber = (EditText) dialog.findViewById(R.id.edtMainGuestPhoneNumber);
+		
+		final EditText edtMainGuestCompany = (EditText) dialog.findViewById(R.id.edtMainGuestCompany);
+		final EditText edtMainGuestFloor = (EditText) dialog.findViewById(R.id.edtMainGuestFloor);
+		final EditText edtMainGuestTable = (EditText) dialog.findViewById(R.id.edtMainGuestTable);
+		
+		final ImageButton imbMainGuestChooseCompany = (ImageButton) dialog.findViewById(R.id.imbMainGuestChooseCompany);
+		final ImageButton imbMainGuestChooseFloor = (ImageButton) dialog.findViewById(R.id.imbMainGuestChooseFloor);
+		final ImageButton imbMainGuestChooseTable = (ImageButton) dialog.findViewById(R.id.imbMainGuestChooseTable);
+		
+		// Click nut chon Company
+		imbMainGuestChooseCompany.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				getAllCompanyCode();
+				
+				setOnClickButtonFloor(new IOnClickButtonFloor() {
+					@Override
+					public void getFloor(int floor) {
+						
+					}
+
+					@Override
+					public void getCompany(String company) {
+						companyCode = company;
+						edtMainGuestCompany.setText(companyCode);
+						edtMainGuestFloor.setText("");
+						edtMainGuestTable.setText("");
+					}
+
+					@Override
+					public void getTable(String table) {
+						
+					}
+				});
+			}
+		});
+		
+		// Click nut chon Tang => Theo CompayCode
+		imbMainGuestChooseFloor.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if( !TextUtils.isEmpty(companyCode)){
+					// Hiển thị tất cả các tầng
+					getAllFloorByCompany(companyCode);
+					
+					setOnClickButtonFloor(new IOnClickButtonFloor() {
+						@Override
+						public void getFloor(int _floor) {
+							floor = _floor;
+							edtMainGuestFloor.setText("Floor " + floor);
+							edtMainGuestTable.setText("");
+						}
+
+						@Override
+						public void getCompany(String companyCode) {
+							
+						}
+
+						@Override
+						public void getTable(String table) {
+							
+						}
+					});
+				}else{
+					Toast.makeText(mContext, "Please choose one floor !", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		
+		// Click nut chon Ban
+		imbMainGuestChooseTable.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				if( floor != -1 ){
+					
+					getNameTableByFloor(companyCode, floor);
+					
+					setOnClickButtonFloor(new IOnClickButtonFloor() {
+						@Override
+						public void getFloor(int floor) {
+							
+						}
+
+						@Override
+						public void getCompany(String companyCode) {
+							
+						}
+
+						@Override
+						public void getTable(String table) {
+							edtMainGuestTable.setText(table);
+						}
+					});
+				}else{
+					Toast.makeText(mContext, "Vui long chon tang", Toast.LENGTH_SHORT).show();
+				}
+				
+			}
+		});
 		
 		// Lấy SĐT của device hiển thị lên listview
 		String phoneNumber = new GetDeviceInfo(mContext).getPhoneNumber();
 		edtMainGuestPhoneNumber.setText(phoneNumber);
 		
-		// Hiển thị tất cả các tầng
-		refreshSpinnerFloor(spMainFloor);
-		
-		// Hiển thị bàn theo mã tầng
-		Floor floor = (Floor) spMainFloor.getSelectedItem();
-		refreshSpinnerTable(spMainTable,floor.getId());
-		
-		// Mỗi khi chọn tầng => Refesh lại màn hình chọn bàn
-		spMainFloor.setOnItemSelectedListener(new OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> arg0, View view, int position, long arg3) {
-				Floor floor = (Floor) spMainFloor.getItemAtPosition(position);
-				refreshSpinnerTable(spMainTable,floor.getId());
-			}
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
-			}
-		});
-	
-		
 		// Click button OK chuyển sang màn hình chọn món
-		dialog.findViewById(R.id.btnMainOK).setOnClickListener(new View.OnClickListener() {
+		dialog.findViewById(R.id.btnMainGuestOK).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				String username = "Guest";
-				final String floor = spMainFloor.getSelectedItem().toString();
 				
-				String codeTable = spMainTable.getSelectedItem().toString();
-				//codeTable = genTableCode(codeTable); // T1_B1
-				
-				String invCode = "Guest"+"_"+codeTable; // Guest_T1_B1
+				final String floor = edtMainGuestFloor.getText().toString();
 				
 				// Kiểm tra thông tin Name hoặc SĐT
 				String sGuestName = edtMainGuestName.getText().toString().trim();
@@ -139,27 +224,45 @@ public class MainPosActivityHelper {
 					Toast.makeText(mContext, "Please input Name or Phone number !", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if( TextUtils.isEmpty( sGuestPhoneNumber ) ){
-					MainPosActivity.username = "Guest";
-				}else{
-					MainPosActivity.username = sGuestName;
-				}
+				
+				// Kiểm tra tên user
+				if( !TextUtils.isEmpty( sGuestName ) ){
+					username = sGuestName;
+				} 
+				
+				// Kiểm tra số điện thoại
 				if( TextUtils.isEmpty( sGuestPhoneNumber ) ){
 					Toast.makeText(mContext, "Please input phone number !", Toast.LENGTH_SHORT).show();
 					return;
 					//MainPosActivity.phoneNumber = 0 ;
 				}else{
 					boolean check = new CheckValidate().isPhoneValidate(sGuestPhoneNumber);
-					if( check == true ){
-						MainPosActivity.phoneNumber = sGuestPhoneNumber ;
-					}else{
+					if( check == false ){
 						Toast.makeText(mContext, "Phone number format wrong !", Toast.LENGTH_SHORT).show();
 						return;
 					}
 				}
 				
+				// Kiểm tra thông tin chọn nhà hàng
+				String isChooseCompanyCode = edtMainGuestCompany.getText().toString();
+				if( isChooseCompanyCode.contains("No") ){
+					Toast.makeText(mContext, "Please choose Company !", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				
+				// Kiểm tra thông tin chọn tầng
+				String isChooseFloor = edtMainGuestCompany.getText().toString();
+				if( isChooseFloor.contains("No") ){
+					Toast.makeText(mContext, "Please choose floor !", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				
+								
 				// Kiểm tra thông tin chọn bàn
-				if( codeTable.contains("free") ){
+				String codeTable = edtMainGuestTable.getText().toString();
+				String invCode = "Guest"+"_"+codeTable; // Guest_T1_B1
+				
+				if( codeTable.contains("No") ){
 					Toast.makeText(mContext, "Floor is not free table !", Toast.LENGTH_SHORT).show();
 					return;
 				}
@@ -186,7 +289,7 @@ public class MainPosActivityHelper {
 				//Server
 				if (new ConfigurationServer((MainPosActivity)mContext).isOnline()) {
 						dialog.dismiss();
-						onListenerLogInOrOut.onLoginSuccess(username);
+						onListenerLogInOrOut.onLoginSuccess(sGuestPhoneNumber, username, isChooseCompanyCode);
 						try{
 							//iSelectItable.onSelectItable(2, 1, "T1_B1", user_id);
 							if (new ConfigurationServer((MainPosActivity)mContext).isOnline()) {
@@ -197,20 +300,16 @@ public class MainPosActivityHelper {
 								ArrayList<String> lstCodeTable = new ArrayList<String>();
 								lstCodeTable.add(codeTable);
 								
-								boolean isSuccessInv = new WSAddNewInvoice(mContext, invCode, 4, MainPosActivity.user_id, "", 0).execute().get();
-								boolean isSuccessItable = new WSAddInvTable(mContext, invCode, MainPosActivity.user_id, lstCodeTable).execute().get();
-								boolean isSuccessUpStatus = new WSUpdateItableStatus(mContext, 2, MainPosActivity.phoneNumber, lstCodeTable).execute().get();
+								boolean isSuccessInv = new WSAddNewInvoice(mContext, invCode, 4, "", 0).execute().get();
+								boolean isSuccessItable = false ;//= new WSAddInvTable(mContext, invCode, lstCodeTable).execute().get();
+								boolean isSuccessUpStatus = false ;//= new WSUpdateItableStatus(mContext, 2, lstCodeTable).execute().get();
 								
-								/*
-								-------------------add invoice to bean---------------------
-								Invoice inv = new Invoice();
-								inv.setInv_code(inv_code);
-								inv.setInv_starttime(simpDate);
-								inv.setUser_id(user_id);
-								inv.setStatus(1);
-								MainPosActivity.beanDataAll.addInvoice(inv);
-								new WSUpdateItableStatus(InvoicePosFragment.this.context, 2, user_id, itemTable).execute();*/
-								
+								if( isSuccessInv == true ){
+									isSuccessItable = new WSAddInvTable(mContext, invCode, lstCodeTable).execute().get();
+								}
+								if( isSuccessItable == true ){
+									isSuccessUpStatus = new WSUpdateItableStatus(mContext, 2, lstCodeTable).execute().get();
+								}
 								if( isSuccessInv && isSuccessItable && isSuccessUpStatus){
 									// Nếu đã tạo xong 3 bước trên
 									// Chuyển sang màn hình gọi món ăn
@@ -233,8 +332,9 @@ public class MainPosActivityHelper {
 				} 
 			}
 		});
+		
 		// Click button Cancel thoát khỏi chương trình
-		dialog.findViewById(R.id.btnMainExit).setOnClickListener(new OnClickListener() {
+		dialog.findViewById(R.id.btnMainGuestCancel).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				if (dialog != null) {
@@ -244,52 +344,110 @@ public class MainPosActivityHelper {
 				onListenerLogInOrOut.onBackPressd();
 			}
 		});
+	
 	}
 	
-	/** Lấy tất cả danh sách Itable Free của tầng floorId */
-	public void refreshSpinnerTable(Spinner spMainTable, int floor){
+	/**
+	 * Lấy tất cả danh sách nhà hàng
+	 */
+	public void getAllCompanyCode() {
+		// Lấy tất cả Company code hiển thị 
+		ArrayList<Company> lstCompanys = new ArrayList<Company>();
+		final ArrayList<String> lstCompanyCode  = new ArrayList<String>();
+		
 		try {
-			ArrayList<Itable> lstItableByFloors =  new WSGetAllItableFreeByFloor(mContext).execute(floor).get();
-			ArrayList<String> lstTableCodes = new ArrayList<String>();
+			lstCompanys = new WSGetCompanyCode(mContext).execute().get();
+			for (Company company2 : lstCompanys) {
+				lstCompanyCode.add(company2.getCompanycode());
+			}
+		} catch (Exception e) { e.printStackTrace(); }
+		
+		if( lstCompanyCode.size() == 0 ) lstCompanyCode.add("No data");
+		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.select_dialog_singlechoice, lstCompanyCode);
+		new AlertDialog.Builder(mContext)
+		.setIcon(android.R.drawable.ic_menu_more)
+		.setTitle("Choose company")
+		.setSingleChoiceItems(adapter, 0, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int position) {
+				//ecompany.setText(String.valueOf( lstCompanyCode.get(position) ));
+				onClickButtonFloor.getCompany( lstCompanyCode.get(position) ) ;
+				dialog.cancel();
+			}
+		})
+		.create().show();
+	}
+	
+	/**
+	 * Lấy tất cả danh sách bàn của tầng
+	 * @param floor : Mã tầng
+	 */
+	public void getNameTableByFloor(String company, int floor){
+		try {
+			ArrayList<Itable> lstItableByFloors =  new WSGetAllItableFreeByFloor( mContext, company, floor ).execute().get();
+			final ArrayList<String> lstTableCodes = new ArrayList<String>();
 			for (Itable itable : lstItableByFloors) {
 				if( itable.getStatus()== 0 ) // Chỉ lấy những bàn trống hiển thị lên
 					lstTableCodes.add(itable.getCode_table());
 			}
-			if( lstTableCodes.size() == 0 ) lstTableCodes.add("No table free");
-			SpinnerAdapterTable spinnerAdapter = new SpinnerAdapterTable(lstTableCodes, mContext);
 			
-			/*ArrayAdapter<String> adapterTable = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, lstTableCodes);
-			spMainTable.setAdapter(adapterTable);*/
-			spMainTable.setAdapter(spinnerAdapter);
-			spinnerAdapter.notifyDataSetChanged();
+			if( lstTableCodes.size() == 0 ) lstTableCodes.add("No table free");
+			
+			ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.select_dialog_singlechoice, lstTableCodes);
+			
+			new AlertDialog.Builder(mContext)
+			.setIcon(android.R.drawable.ic_menu_more)
+			.setTitle("Chon ban")
+			.setSingleChoiceItems(adapter, 0, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int position) {
+					onClickButtonFloor.getTable( lstTableCodes.get(position) ) ;
+					dialog.cancel();
+				}
+			}).create().show();
 			
 		} catch (Exception e) {
 			Log.e("Error", e.getMessage().toString());
 		}  
 	}
 	
-	/** Lấy Tất cả Danh sách Floor đổ lên spinner floor*/
-	public void refreshSpinnerFloor(Spinner spMainFloor){
+	/**
+	 * Lấy tất cả tầng của nhà hàng
+	 * @param companyCode : Mã nhà hàng
+	 */
+	public void getAllFloorByCompany(String companyCode){
 		try {
 			// ArrayList<String> lstFloor = new WSGetAllFloor(mContext).execute().get();
-			 ArrayList<Floor> lstFloors = new WSGetFloor(mContext).execute().get();
-			/* ArrayList<Integer> lstFloorId = new ArrayList<Integer>();
+			 ArrayList<Floor> lstFloors = new WSGetFloorByCompany(mContext, companyCode).execute().get();
+			 final ArrayList<Integer> lstFloorId = new ArrayList<Integer>();
+			
 			 for (Floor floor : lstFloors) {
-				 lstFloorId.add(floor.getId());
+				 lstFloorId.add(Integer.parseInt( floor.getCode() ));
 			 }
+			
 			 if( lstFloorId.size() == 0 ) lstFloorId.add(0); 
-			 ArrayAdapter<Integer> adapterFloor = new ArrayAdapter<Integer>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, lstFloorId);
-			*/
-			 SpinnerAdapterFloor adapterFloor = new SpinnerAdapterFloor(lstFloors, mContext);
-				
-			 spMainFloor.setAdapter(adapterFloor);
-			 adapterFloor.notifyDataSetChanged();
+			
+			 ArrayAdapter<Integer> adapterFloor = new ArrayAdapter<Integer>(mContext, android.R.layout.select_dialog_singlechoice, android.R.id.text1, lstFloorId);
+			
+			 new AlertDialog.Builder(mContext)
+				.setIcon(android.R.drawable.ic_menu_more)
+				.setTitle("Choose company")
+				.setSingleChoiceItems(adapterFloor, 0, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int position) {
+						onClickButtonFloor.getFloor( lstFloorId.get(position) ) ;
+						dialog.cancel();
+					}
+				})
+				.create().show();
+			  
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		} 
 	}
 	
-	
+	// bo? ko dung
 	public boolean putDataLogin(String username, String pass, String URL) {
 		JSONObject json = new JSONObject();
 		try {
@@ -331,8 +489,20 @@ public class MainPosActivityHelper {
 	}
 	
 	public interface OnListenerLogInOrOut{
-		public void onLoginSuccess(String username);
+		public void onLoginSuccess(String phone, String username, String company);
 		public void onBackPressd();
+	}
+	
+	/**
+	 * Tạo interface để click vào các nút chọn Nhà hàng, Tầng, Bàn
+	 * @author GIACNGO
+	 *
+	 */
+	private interface IOnClickButtonFloor{
+		public void getCompany(String companyCode);
+		public void getFloor(int floor);
+		public void getTable(String table);
+		
 	}
 	
 	/**

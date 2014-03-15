@@ -15,30 +15,38 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class WSGetAllItableFreeByFloor extends AsyncTask<Integer, Void, ArrayList<Itable>>{
+public class WSGetAllItableFreeByFloor extends AsyncTask<Void, Void, ArrayList<Itable>>{
 	
 	private ConfigurationWS mWS;
 	private ProgressDialog dialog;
+	private String companyCode;
+	private int floor;
 	
-	public WSGetAllItableFreeByFloor(Context mContext) {
+	public WSGetAllItableFreeByFloor(Context mContext, String companyCode, int floor) {
 		super();
 		mWS = new ConfigurationWS(mContext);
+		this.companyCode = companyCode;
+		this.floor = floor;
 		dialog = new ProgressDialog(mContext);
-		dialog.setMessage("Loading");
-		dialog.show();
+		
 	}
 
 	@Override
-	protected ArrayList<Itable> doInBackground(Integer... params) {
-		int floorId = params[0];
+	protected void onPreExecute() {
+		dialog.setMessage("Loading");
+		dialog.show();
+		super.onPreExecute();
+	}
+	@Override
+	protected ArrayList<Itable> doInBackground(Void... params) {
 		ArrayList<Itable> lstItableByFloors = new ArrayList<Itable>();
 		try {
 			// ---------------get String ------------------------//
 			String URL = ConfigurationServer.getURLServer() + "wsgetallitable.php";
 			JSONObject json = new JSONObject();
-			json.put("floor", floorId);
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("floor", floor);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", companyCode);
 			
 			JSONArray arrITable = mWS.connectWSPut_Get_Data(URL, json, "itable");
 			for (int i = 0; i < arrITable.length(); i++) {

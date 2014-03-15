@@ -35,8 +35,8 @@ public class WSUpdateJoinInv extends AsyncTask<Void, Void, Void> {
 			JSONObject json = new JSONObject();
 			json.put("inv_code_new", inv_code_new);
 			json.put("inv_code_old", inv_code_old);
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			mWS.connectWS_Put_Data(URLUpdateJoinInv, json);
 
 		} catch (Exception e) {

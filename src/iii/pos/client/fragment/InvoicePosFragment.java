@@ -237,7 +237,7 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 							
 							// -------checking status of invoice--------//
 							int flag = 0;
-							if (status == 0 || other_user !=  MainPosActivity.user_id ) 
+							if (status == 0 || other_user !=  MainPosActivity.user.getUser_id() ) 
 							{
 								flag = 0;
 								if (new ConfigurationServer(context).isOnline()) {
@@ -425,8 +425,8 @@ public class InvoicePosFragment<viewHolderInvoice> extends FragmentBase implemen
 					String URL = ConfigurationServer.getURLServer() + "wsgetInvByCodeTable.php";
 					JSONObject json = new JSONObject();
 					json.put("code_table", code_table);
-					json.put("user_id", MainPosActivity.phoneNumber);
-					json.put("company_code", MainPosActivity.company_code);
+					json.put("user_id", MainPosActivity.user.getUser_id());
+					json.put("company_code", MainPosActivity.user.getCompanyCode());
 					JSONArray jarr = mWS.connectWSPut_Get_Data(URL, json, "posts");
 					for (int i = 0; i < jarr.length(); i++) {
 						JSONObject element = jarr.getJSONObject(i);

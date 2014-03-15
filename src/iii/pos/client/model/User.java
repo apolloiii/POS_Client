@@ -1,11 +1,13 @@
 package iii.pos.client.model;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
 
 /*---------------------model User -------------------*/
-public class User {
+public class User implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private int user_id;
 	private String username;
 	private String password;
@@ -17,7 +19,15 @@ public class User {
 	private String update_time;
 	private int flag;
 	private String title;
-	
+	private String companyCode; // Mã nhà hàng
+
+	public User(String username, String password, String companyCode) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.companyCode = companyCode;
+	}
+
 	/*-----------constructor---------------------------------------*/
 	public User() {
 		user_id = 0;
@@ -32,6 +42,7 @@ public class User {
 		flag = 0;
 		title = "";
 	}
+
 	/*-----------constructor---------------------------------------*/
 	public User(int user_id, String username, String password, int sex,
 			int age, String email, String address, String create_time,
@@ -49,7 +60,7 @@ public class User {
 		this.flag = flag;
 		this.title = title;
 	}
-	
+
 	/*---------------getter, setter-------------------------------*/
 	public int getUser_id() {
 		return user_id;
@@ -130,12 +141,20 @@ public class User {
 	public void setFlag(int flag) {
 		this.flag = flag;
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public String getCompanyCode() {
+		return companyCode;
+	}
 }

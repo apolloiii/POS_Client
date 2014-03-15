@@ -31,5 +31,8 @@
     <color name="testcolor2">#FFFF00</color>
     <color name="report_item_color1">#E5C1A7</color>
     <color name="report_item_color2">#D2B18F</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="gray_light_sky"> #D4DEE0</color>
+    <color name="blue_light_sky">#61747A</color>
 
 </resources>

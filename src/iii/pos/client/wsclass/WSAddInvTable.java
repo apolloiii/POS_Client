@@ -24,12 +24,10 @@ public class WSAddInvTable extends AsyncTask<Void, Void, Boolean> {
 	private String inv_code;
 	private ArrayList<String> itemTable;
 	private ConfigurationWS mWS;
-	private int user_id;
 
 	// =======================constructor===========================//
-	public WSAddInvTable(Context mContext, String inv_code, int user_id, ArrayList<String> itemTable1) {
+	public WSAddInvTable(Context mContext, String inv_code, ArrayList<String> itemTable1) {
 		this.inv_code = inv_code;
-		this.user_id = user_id;
 		this.itemTable = new ArrayList<String>();
 		mWS = new ConfigurationWS(mContext);
 		for (String string : itemTable1) {
@@ -47,8 +45,8 @@ public class WSAddInvTable extends AsyncTask<Void, Void, Boolean> {
 				JSONObject json = new JSONObject();
 				json.put("inv_code", inv_code);
 				json.put("table_code", table_code);
-				json.put("user_id", MainPosActivity.phoneNumber);
-				json.put("company_code", MainPosActivity.company_code);
+				json.put("user_id", MainPosActivity.user.getUser_id());
+				json.put("company_code", MainPosActivity.user.getCompanyCode());
 				
 				JSONArray arrItem = mWS.connectWSPut_Get_Data(URLAddNewInvoice, json, "posts");
 				if (arrItem != null) {

@@ -43,8 +43,8 @@ public class WSUpdateItable extends AsyncTask<Itable, Void, Void> {
 			json.put("code_table", itable.getCode_table());
 			json.put("pos_x", itable.getPos_x());
 			json.put("pos_y", itable.getPos_y());
-			json.put("user_id", MainPosActivity.phoneNumber);
-			json.put("company_code", MainPosActivity.company_code);
+			json.put("user_id", MainPosActivity.user.getUser_id());
+			json.put("company_code", MainPosActivity.user.getCompanyCode());
 			
 			Log.i("JSON UPDATE_ITABLE: table_id: ", itable.getItable_id()+"");
 			Log.i("JSON UPDATE_ITABLE: code_table: ", itable.getCode_table());
